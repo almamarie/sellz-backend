@@ -3,7 +3,7 @@ const logger = require("../utils/logger");
 const passwordFunctions = require("../utils/auth");
 
 exports.postCreateUser = async (req, res, next) => {
-  logger.info("Create new user called...");
+  logger.info("Creating a new user...");
 
   try {
     const identicalUser = await User.findAll({
@@ -20,24 +20,11 @@ exports.postCreateUser = async (req, res, next) => {
       req.body.password
     );
 
-    const userData = {
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      passwordHash,
-    };
-
-    const response = await User.create(userData);
+    const newUser = await User.create({ ...req.body, passwordHash });
 
     return res.status(201).send({
       success: true,
-      body: {
-        userId: response.userId,
-        firstName: response.firstName,
-        lastName: response.lastName,
-        email: response.email,
-        createdAt: response.createdAt,
-      },
+      body: newUser.format(),
     });
   } catch (error) {
     console.log(error);
@@ -60,20 +47,16 @@ exports.postUpdateUser = async (req, res) => {
     await user.update({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
-      email: req.body.email,
+      otherNames: req.body.otherNames,
+      birthdate: req.body.birthdate,
+      address: req.body.address,
     });
 
     await user.save();
 
     return res.status(201).send({
       success: true,
-      body: {
-        userId: user.userId,
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email,
-        updatedAt: user.updatedAt,
-      },
+      body: user.format(),
     });
   } catch (error) {
     console.log(error);
@@ -93,12 +76,13 @@ exports.getUser = async (req, res) => {
 
     return res.status(200).send({
       success: true,
-      body: {
-        userId: user.userId,
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email,
-      },
+      body: user.format(),
+      //  {
+      //   userId: user.userId,
+      //   firstName: user.firstName,
+      //   lastName: user.lastName,
+      //   email: user.email,
+      // },
     });
   } catch (error) {
     return res.status(400).send({ success: false, body: "User not found." });
