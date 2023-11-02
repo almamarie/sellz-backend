@@ -15,9 +15,21 @@ exports.comparePasswords = async (plainTextPassword, hashedPassword) => {
 };
 
 exports.generateJwt = async (user) => {
-  return jwt.sign(user.format(), config.jwt.secret, {
-    expiresIn: config.jwt.duration,
-  });
+  const duration = 60 * 60 * config.jwt.duration;
+
+  const payloadData = {
+    sub: user.userId,
+    iss: "https://sellz-backend.com",
+    aud: "https://sellz.com",
+    exp: Math.floor(Date.now() / 1000) + duration,
+    iat: Math.floor(Date.now() / 1000),
+    name: user.name,
+    roles: ["user"],
+  };
+
+  console.log("\n\n\nPayload data: ", payloadData);
+
+  return jwt.sign(payloadData, config.jwt.secret);
 };
 
 exports.requireAuth = async (req, res, next) => {
@@ -37,6 +49,7 @@ exports.requireAuth = async (req, res, next) => {
     logger.info("User Verified");
     return next();
   } catch (error) {
+    console.log(error);
     logger.error("Unauthorised user!");
     return res.status(401).send("Unauthorised user");
   }

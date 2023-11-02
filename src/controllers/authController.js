@@ -18,14 +18,12 @@ exports.signIn = async (req, res) => {
 
     const userData = {
       userId: user.userId,
-      firstName: user.firstName,
-      lastName: user.lastName,
-      email: user.email,
+      name: `${user.firstName} ${user.lastName}`,
     };
 
-    const token = await generateJwt(user);
+    const token = await generateJwt(userData);
 
-    const resData = { user: userData, token };
+    const resData = { user: user.format(), token };
 
     return res.status(200).send({ success: true, body: resData });
   } catch (error) {

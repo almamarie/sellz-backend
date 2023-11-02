@@ -3,8 +3,7 @@ const sequelize = require("../databases/sequelize");
 
 const User = sequelize.define("user", {
   userId: {
-    type: INTEGER,
-    autoIncrement: true,
+    type: STRING,
     allowNull: false,
     primaryKey: true,
     unique: true,
