@@ -36,6 +36,13 @@ class Config {
         'aivhuvgwuVEWuvbew9uviwepvp879wef8fqfbqf8qp78fqwfihqfpiuqfgeaucasvuiasvavhioavg89arvhiosbvsjvasyv',
       duration: process.env.JWT_DURATION,
     };
+
+    this.mailServer = {
+      emailHost: process.env.EMAIL_HOST,
+      emailPort: process.env.EMAIL_PORT,
+      emailUsername: process.env.EMAIL_USERNAME,
+      emailPassword: process.env.EMAIL_PASSWORD,
+    };
   }
 }
 

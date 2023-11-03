@@ -47,6 +47,8 @@ exports.postCreateUser = catchAsync(
 
     const passwordHash = await generateHashPassword(req.body.password);
 
+    console.log('PasswordHash: ', passwordHash);
+
     const userId = generateId();
     const profilePicture = await cloudinaryImageUpload(profilePicturePath);
     const newUser = await User.create({

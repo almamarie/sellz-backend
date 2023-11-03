@@ -68,6 +68,16 @@ const User = sequelize.define('user', {
     type: STRING,
     allowNull: false,
   },
+
+  passwordResetToken: {
+    type: STRING,
+    allowNull: true,
+  },
+
+  passwordResetExpires: {
+    type: DATE,
+    allowNull: true,
+  },
 });
 
 User.prototype.format = function () {
@@ -98,6 +108,14 @@ User.prototype.createPasswordResetToken = function () {
   this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
 
   return resetToken;
+};
+
+User.prototype.changedPasswordAfter = function (JWTTimestamp) {
+  if (this.updatedAt) {
+    const changedTimestamp = parseInt(this.updatedAt.getTime() / 1000, 10);
+
+    return JWTTimestamp < changedTimestamp;
+  }
 };
 
 module.exports = User;

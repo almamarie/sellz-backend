@@ -1,3 +1,5 @@
+const { Op } = require('sequelize');
+const crypto = require('crypto');
 const User = require('../models/user');
 const AppError = require('../utils/appError');
 const catchAsync = require('../utils/catchAsync');
@@ -5,6 +7,7 @@ const logger = require('../logs/logger');
 const Config = require('../config/config');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+const sendEmail = require('../utils/email');
 
 const config = new Config();
 
@@ -87,7 +90,6 @@ exports.requireAuth = catchAsync(async (req, res, next) => {
     where: { userId: jwtResponse.sub },
   });
 
-  console.log('Current User: ', currentUser);
   if (!currentUser) {
     return next(
       new AppError(
@@ -97,6 +99,110 @@ exports.requireAuth = catchAsync(async (req, res, next) => {
     );
   }
 
+  if (currentUser.changedPasswordAfter(jwtResponse.iat)) {
+    return next(
+      new AppError('User recently changed password! Please log in again.', 401)
+    );
+  }
+
   logger.info('User Verified');
   return next();
+});
+
+exports.forgotPassword = catchAsync(async (req, res, next) => {
+  if (!req.body.email) {
+    return next(new AppError('Please provide user email', 400));
+  }
+  const user = await User.findOne({ where: { email: req.body.email } });
+
+  if (!user) {
+    return next(new AppError('There is no user with email address!', 404));
+  }
+
+  const resetToken = user.createPasswordResetToken();
+  await user.save({ validateBeforeSave: false });
+
+  // 3) Send it to user's email
+  const resetURL = `${req.protocol}://${req.get(
+    'host'
+  )}/api/v1/users/resetPassword/${resetToken}`;
+
+  const message = `Forgot your password? Submit a PATCH request with your new password and passwordConfirm to: ${resetURL}.\nIf you didn't forget your password, please ignore this email!`;
+
+  try {
+    await sendEmail({
+      email: user.email,
+      subject: 'Your password reset token (valid for 10 min)',
+      message,
+    });
+
+    res.status(200).json({
+      status: 'success',
+      message: 'Token sent to email!',
+    });
+  } catch (err) {
+    user.passwordResetToken = undefined;
+    user.passwordResetExpires = undefined;
+    await user.save({ validateBeforeSave: false });
+
+    console.log(err);
+    return next(
+      new AppError('There was an error sending the email. Try again later!'),
+      500
+    );
+  }
+});
+
+exports.resetPassword = catchAsync(async (req, res, next) => {
+  if (!req.params.token) return next(new AppError('Token is required', 400));
+
+  if (!req.body.password)
+    return next(new AppError('New password is required', 400));
+
+  const hashedToken = await crypto
+    .createHash('sha256')
+    .update(req.params.token)
+    .digest('hex');
+
+  console.log('Hashed Token: ', hashedToken);
+
+  const user = await User.findOne({
+    where: {
+      passwordResetToken: hashedToken,
+      passwordResetExpires: { [Op.gt]: Date.now() },
+    },
+  });
+
+  if (!user) return next(new AppError('Token is invalid or has expired', 400));
+
+  if (await comparePasswords(req.body.password, user.passwordHash)) {
+    return next(
+      new AppError('New password cannot be same as previous password', 401)
+    );
+  }
+
+  await user.update({
+    passwordHash: await this.generateHashPassword(req.body.password),
+    passwordResetToken: undefined,
+    passwordResetExpires: undefined,
+  });
+  await user.save();
+
+  createSendToken(user, 200, res);
+});
+
+exports.updatePassword = catchAsync(async (req, res, next) => {
+  const user = await User.findByPk(req.body.userId);
+
+  if (!user) return next(new AppError('User not found.', 400));
+
+  if (!(await comparePasswords(req.body.currentPassword, user.passwordHash)))
+    return next(new AppError('Your current password is wrong', 401));
+
+  user.update({
+    passwordHash: await this.generateHashPassword(req.body.newPassword),
+  });
+  const updatedUser = await user.save();
+
+  createSendToken(updatedUser, 201, res);
 });
