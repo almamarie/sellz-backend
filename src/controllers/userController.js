@@ -66,13 +66,6 @@ exports.postCreateUser = catchAsync(
       success: true,
       data: { user: newUser.format() },
     });
-    // } catch (error) {
-    //   console.log(error);
-
-    //   return res
-    //     .status(400)
-    //     .send({ success: false, body: "Error creating user." });
-    // }
   },
   (req, res) => {
     const profilePicture = req.file.path;
@@ -80,14 +73,14 @@ exports.postCreateUser = catchAsync(
   }
 );
 
-exports.patchUpdateUser = async (req, res) => {
+exports.patchUpdateUser = catchAsync(async (req, res) => {
   logger.info('Update user called...');
 
   try {
     const userId = req.params.userId;
     const user = await User.findByPk(userId);
     if (!user) {
-      throw new Error('User may not exist');
+      new AppError('User may not exist', 404);
     }
 
     await user.update({
@@ -110,7 +103,7 @@ exports.patchUpdateUser = async (req, res) => {
       .status(400)
       .send({ success: false, body: 'Error updating user.' });
   }
-};
+});
 
 exports.patchUpdateProfilePhoto = async (req, res) => {
   logger.info('Creating a new user...');
@@ -119,7 +112,9 @@ exports.patchUpdateProfilePhoto = async (req, res) => {
   try {
     const userId = req.params.userId;
     const user = await User.findByPk(userId);
-    if (!user) throw new Error();
+    if (!user) {
+      new AppError('User may not exist', 404);
+    }
 
     const profilePicture = await cloudinaryImageUpload(profilePicturePath);
 
@@ -147,8 +142,9 @@ exports.getUser = async (req, res) => {
 
     const user = await User.findByPk(userId);
 
-    if (!user) throw new Error();
-
+    if (!user) {
+      new AppError('User may not exist', 404);
+    }
     return res.status(200).send({
       success: true,
       data: { user: user.format() },
