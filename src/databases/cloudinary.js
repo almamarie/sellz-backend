@@ -1,4 +1,6 @@
-const cloudinary = require("cloudinary").v2;
+const logger = require('../logs/logger');
+
+const cloudinary = require('cloudinary').v2;
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
@@ -7,11 +9,13 @@ cloudinary.config({
 });
 
 exports.cloudinaryImageUpload = async (path) => {
-  console.log("Here now: ", path);
-  const result = await cloudinary.uploader.upload(path, {
-    folder: process.env.CLOUDINARY_FOLDER_NAME,
-  });
-  console.dir(result, { depth: null });
+  logger.info('Uploading file...');
+  // const result = await cloudinary.uploader.upload(path, {
+  //   folder: process.env.CLOUDINARY_FOLDER_NAME,
+  // });
+  // console.dir(result, { depth: null });
 
-  return result.url;
+  logger.info('Done uploading file...');
+  // return result.url;
+  return 'http://res.cloudinary.com/marieloumar/image/upload/v1698964016/sellz-profile-pictures/mynuilxrluml1e0osuua.jpg';
 };

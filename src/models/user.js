@@ -1,7 +1,7 @@
-const { INTEGER, STRING, DATE, NOW, DATEONLY } = require("sequelize");
-const sequelize = require("../databases/sequelize");
+const { INTEGER, STRING, DATE, NOW, DATEONLY } = require('sequelize');
+const sequelize = require('../databases/sequelize');
 
-const User = sequelize.define("user", {
+const User = sequelize.define('user', {
   userId: {
     type: STRING,
     allowNull: false,
@@ -27,7 +27,6 @@ const User = sequelize.define("user", {
   birthdate: {
     type: DATEONLY,
     allowNull: false,
-    unique: true,
   },
 
   gender: {
@@ -36,8 +35,8 @@ const User = sequelize.define("user", {
     unique: false,
     validate: {
       isIn: {
-        args: [["M", "F"]],
-        msg: "Gender must be M or F",
+        args: [['M', 'F']],
+        msg: 'Gender must be M or F',
       },
     },
   },

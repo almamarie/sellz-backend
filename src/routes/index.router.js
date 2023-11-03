@@ -1,7 +1,7 @@
 const express = require("express");
 const UserRouter = require("./user.router");
 const AuthRouter = require("./auth.router");
-const logger = require("../utils/logger");
+const logger = require("../logs/logger");
 const router = express.Router();
 
 router.get("/", (req, res) => {

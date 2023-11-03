@@ -1,50 +1,51 @@
-const User = require("../models/user");
-const logger = require("../utils/logger");
-const passwordFunctions = require("../utils/auth");
-const multer = require("multer");
-const fs = require("fs");
-const { generateId } = require("../utils/generateId");
-const { cloudinaryImageUpload } = require("../utils/cloudinary");
-const { deleteFile } = require("../utils/deleteFile");
+const User = require('../models/user');
+const logger = require('../logs/logger');
+const passwordFunctions = require('../utils/auth');
+const multer = require('multer');
+const { generateId } = require('../utils/generateId');
+const { cloudinaryImageUpload } = require('../databases/cloudinary');
+const { deleteFile } = require('../utils/deleteFile');
+const catchAsync = require('../utils/catchAsync');
 
 const multerStorage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "src/public/img/new-user");
+    cb(null, 'src/public/img/new-user');
   },
 
   filename: (req, file, cb) => {
-    const ext = file.mimetype.split("/")[1];
+    const ext = file.mimetype.split('/')[1];
     const id = req.body.email
-      ? req.body.email.split("@")[0]
+      ? req.body.email.split('@')[0]
       : req.params.userId;
     cb(null, `user-${id}-${Date.now()}.${ext}`);
   },
 });
 
 const multerFilter = (req, file, cb) => {
-  if (file.mimetype.startsWith("image")) {
+  if (file.mimetype.startsWith('image')) {
     cb(null, true);
   }
 };
 
 const upload = multer({ storage: multerStorage, fileFilter: multerFilter });
 
-exports.uploadUserPhoto = upload.single("profilePicture");
+exports.uploadUserPhoto = upload.single('profilePicture');
 
-exports.postCreateUser = async (req, res, next) => {
-  logger.info("Creating a new user...");
-  const profilePicturePath = req.file.path;
+exports.postCreateUser = catchAsync(
+  async (req, res, next) => {
+    logger.info('Creating a new user...');
+    const profilePicturePath = req.file.path;
 
-  try {
+    // try {
     const identicalUser = await User.findAll({
       where: { email: req.body.email },
     });
 
     // console.log("Identical users: ", identicalUser);
-    if (identicalUser.length > 1) throw new Error("User may already exists");
+    if (identicalUser.length > 1) throw new Error('User may already exists');
 
     if (req.body.password.length < 8)
-      throw new Error("provided password is not strong");
+      throw new Error('provided password is not strong');
 
     const passwordHash = await passwordFunctions.generateHashPassword(
       req.body.password
@@ -65,24 +66,28 @@ exports.postCreateUser = async (req, res, next) => {
       success: true,
       data: { user: newUser.format() },
     });
-  } catch (error) {
-    console.log(error);
-    deleteFile(profilePicturePath);
+    // } catch (error) {
+    //   console.log(error);
 
-    return res
-      .status(400)
-      .send({ success: false, body: "Error creating user." });
+    //   return res
+    //     .status(400)
+    //     .send({ success: false, body: "Error creating user." });
+    // }
+  },
+  (req, res) => {
+    const profilePicture = req.file.path;
+    deleteFile(profilePicture);
   }
-};
+);
 
 exports.patchUpdateUser = async (req, res) => {
-  logger.info("Update user called...");
+  logger.info('Update user called...');
 
   try {
     const userId = req.params.userId;
     const user = await User.findByPk(userId);
     if (!user) {
-      throw new Error("User may not exist");
+      throw new Error('User may not exist');
     }
 
     await user.update({
@@ -103,12 +108,12 @@ exports.patchUpdateUser = async (req, res) => {
     console.log(error);
     return res
       .status(400)
-      .send({ success: false, body: "Error updating user." });
+      .send({ success: false, body: 'Error updating user.' });
   }
 };
 
 exports.patchUpdateProfilePhoto = async (req, res) => {
-  logger.info("Creating a new user...");
+  logger.info('Creating a new user...');
   const profilePicturePath = req.file.path;
 
   try {
@@ -132,7 +137,7 @@ exports.patchUpdateProfilePhoto = async (req, res) => {
     deleteFile(profilePicturePath);
     return res
       .status(400)
-      .send({ success: false, body: "Error creating user." });
+      .send({ success: false, body: 'Error creating user.' });
   }
 };
 
@@ -149,7 +154,7 @@ exports.getUser = async (req, res) => {
       data: { user: user.format() },
     });
   } catch (error) {
-    return res.status(400).send({ success: false, body: "User not found." });
+    return res.status(400).send({ success: false, body: 'User not found.' });
   }
 };
 
@@ -159,8 +164,8 @@ exports.deleteUser = async (req, res) => {
     const user = await User.findByPk(userId);
     if (!user) throw new Error();
     await user.destroy();
-    return res.status(200).send({ success: true, data: "User deleted." });
+    return res.status(200).send({ success: true, data: 'User deleted.' });
   } catch (error) {
-    res.status(400).send({ success: false, body: "An error occured" });
+    res.status(400).send({ success: false, body: 'An error occured' });
   }
 };
