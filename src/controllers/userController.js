@@ -1,11 +1,11 @@
 const User = require('../models/user');
 const logger = require('../logs/logger');
-const passwordFunctions = require('../utils/auth');
 const multer = require('multer');
 const { generateId } = require('../utils/generateId');
 const { cloudinaryImageUpload } = require('../databases/cloudinary');
 const { deleteFile } = require('../utils/deleteFile');
 const catchAsync = require('../utils/catchAsync');
+const { generateHashPassword } = require('./authController');
 
 const multerStorage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -36,20 +36,16 @@ exports.postCreateUser = catchAsync(
     logger.info('Creating a new user...');
     const profilePicturePath = req.file.path;
 
-    // try {
     const identicalUser = await User.findAll({
       where: { email: req.body.email },
     });
 
-    // console.log("Identical users: ", identicalUser);
     if (identicalUser.length > 1) throw new Error('User may already exists');
 
     if (req.body.password.length < 8)
       throw new Error('provided password is not strong');
 
-    const passwordHash = await passwordFunctions.generateHashPassword(
-      req.body.password
-    );
+    const passwordHash = await generateHashPassword(req.body.password);
 
     const userId = generateId();
     const profilePicture = await cloudinaryImageUpload(profilePicturePath);

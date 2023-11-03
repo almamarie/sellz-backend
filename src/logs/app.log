@@ -441,3 +441,148 @@
 {"level":"info","message":"Require auth called"}
 {"level":"info","message":{"aud":"https://sellz.com","exp":1699214869,"iat":1698955669,"iss":"https://sellz-backend.com","name":"Atoluko Ayariga","roles":["user"],"sub":"aedd4d23-e437-4cc2-9d8b-624e84ac119e"}}
 {"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Signing user in..."}
+{"level":"error"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Signing user in..."}
+{"level":"error"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Signing user in..."}
+{"level":"info","message":"User signed in successfully!"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Signing user in..."}
+{"level":"info","message":"User signed in successfully!"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Signing user in..."}
+{"level":"info","message":"User signed in successfully!"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Signing user in..."}
+{"level":"info","message":"User signed in successfully!"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Signing user in..."}
+{"level":"info","message":"User signed in successfully!"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Signing user in..."}
+{"level":"info","message":"User signed in successfully!"}
+{"level":"info","message":"Require auth called"}
+{"expiredAt":"2023-11-03T11:32:54.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Signing user in..."}
+{"level":"info","message":"User signed in successfully!"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Signing user in..."}
+{"level":"info","message":"User signed in successfully!"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Signing user in..."}
+{"level":"info","message":"User signed in successfully!"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"isOperational":true,"level":"error","status":"fail","statusCode":401}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
