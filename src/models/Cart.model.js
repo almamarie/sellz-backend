@@ -1,10 +1,9 @@
-const { INTEGER } = require("sequelize");
-const sequelize = require("../databases/sequelize");
+const { INTEGER, STRING } = require('sequelize');
+const sequelize = require('../databases/sequelize');
 
-const Cart = sequelize.define("cart", {
+const Cart = sequelize.define('cart', {
   cartId: {
-    type: INTEGER,
-    autoIncrement: true,
+    type: STRING,
     allowNull: false,
     primaryKey: true,
     unique: true,

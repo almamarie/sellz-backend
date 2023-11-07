@@ -1,10 +1,9 @@
-const { STRING, INTEGER, NUMBER } = require("sequelize");
-const sequelize = require("../databases/sequelize");
+const { STRING, INTEGER, NUMBER } = require('sequelize');
+const sequelize = require('../databases/sequelize');
 
-const ProductReview = sequelize.define("product_review", {
+const ProductReview = sequelize.define('product_review', {
   productReviewId: {
-    type: INTEGER,
-    autoIncrement: true,
+    type: STRING,
     allowNull: false,
     primaryKey: true,
     unique: true,

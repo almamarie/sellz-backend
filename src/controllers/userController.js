@@ -2,10 +2,13 @@ const User = require('../models/user');
 const logger = require('../logs/logger');
 const multer = require('multer');
 const { generateId } = require('../utils/generateId');
-const { cloudinaryImageUpload } = require('../databases/cloudinary');
+// const { cloudinaryUploadImage } = require('../databases/cloudinary');
 const { deleteFile } = require('../utils/deleteFile');
 const catchAsync = require('../utils/catchAsync');
 const { generateHashPassword } = require('./authController');
+const CustomCloudinary = require('../databases/cloudinary');
+
+const cloudinary = new CustomCloudinary();
 
 const multerStorage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -50,7 +53,9 @@ exports.postCreateUser = catchAsync(
     console.log('PasswordHash: ', passwordHash);
 
     const userId = generateId();
-    const profilePicture = await cloudinaryImageUpload(profilePicturePath);
+    const profilePicture =
+      'http://res.cloudinary.com/marieloumar/image/upload/v1699230037/sellz-profile-pictures/hbmzdskycn6d48rbfnpr.jpg' ||
+      (await cloudinary.uploadSingleImage(profilePicturePath));
     const newUser = await User.create({
       ...req.body,
       passwordHash,
@@ -162,4 +167,20 @@ exports.deleteUser = async (req, res) => {
   } catch (error) {
     res.status(400).send({ success: false, body: 'An error occured' });
   }
+};
+
+exports.fetchUser = (requestType) => {
+  return catchAsync(async (req, res, next) => {
+    let userId;
+    if (requestType === 'POST') userId = req.body.userId;
+    else if (requestType === 'GET') userId = req.params.userId;
+    else next(new AppError('UserId not provided.', 400));
+
+    const user = await User.findByPk(userId);
+    if (!user) next(new AppError('User not found.', 400));
+
+    req.user = user;
+
+    next();
+  });
 };

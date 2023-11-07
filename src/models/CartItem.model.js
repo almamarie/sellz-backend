@@ -1,7 +1,7 @@
-const { INTEGER } = require("sequelize");
-const sequelize = require("../databases/sequelize");
+const { INTEGER } = require('sequelize');
+const sequelize = require('../databases/sequelize');
 
-const CartItem = sequelize.define("cart_item", {
+const CartItem = sequelize.define('cart_item', {
   cartItemId: {
     type: INTEGER,
     autoIncrement: true,

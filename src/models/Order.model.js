@@ -1,10 +1,9 @@
-const { INTEGER, STRING, FLOAT } = require("sequelize");
-const sequelize = require("../databases/sequelize");
+const { STRING, FLOAT } = require('sequelize');
+const sequelize = require('../databases/sequelize');
 
-const Order = sequelize.define("order", {
+const Order = sequelize.define('order', {
   orderId: {
-    type: INTEGER,
-    autoIncrement: true,
+    type: STRING,
     allowNull: false,
     primaryKey: true,
     unique: true,

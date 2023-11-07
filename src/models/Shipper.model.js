@@ -1,7 +1,7 @@
-const { INTEGER, STRING } = require("sequelize");
-const sequelize = require("../databases/sequelize");
+const { INTEGER, STRING } = require('sequelize');
+const sequelize = require('../databases/sequelize');
 
-const Shipper = sequelize.define("shipper", {
+const Shipper = sequelize.define('shipper', {
   shipperId: {
     type: INTEGER,
     autoIncrement: true,

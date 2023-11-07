@@ -1,10 +1,9 @@
-const { STRING, INTEGER } = require("sequelize");
-const sequelize = require("../databases/sequelize");
+const { STRING, INTEGER, FLOAT, TEXT } = require('sequelize');
+const sequelize = require('../databases/sequelize');
 
-const Product = sequelize.define("product", {
+const Product = sequelize.define('product', {
   productId: {
-    type: INTEGER,
-    autoIncrement: true,
+    type: STRING,
     allowNull: false,
     primaryKey: true,
     unique: true,
@@ -15,20 +14,42 @@ const Product = sequelize.define("product", {
     allowNull: false,
   },
 
-  photo: {
+  coverPhoto: {
+    type: STRING,
+    allowNull: false,
+  },
+
+  otherPhotos: {
     type: STRING,
     allowNull: false,
   },
 
   unitPrice: {
-    type: INTEGER,
+    type: FLOAT,
     allowNull: false,
   },
 
-  qunatityInStock: {
-    type: STRING,
+  description: {
+    type: TEXT,
+    allowNull: false,
+  },
+
+  quantityInStock: {
+    type: INTEGER,
     allowNull: false,
   },
 });
+
+Product.prototype.format = function () {
+  return {
+    productId: this.productId,
+    name: this.name,
+    coverPhoto: this.coverPhoto,
+    otherPhotos: JSON.parse(this.otherPhotos).split('[]'),
+    description: this.description,
+    unitPrice: this.unitPrice,
+    quantityInStock: this.quantityInStock,
+  };
+};
 
 module.exports = Product;

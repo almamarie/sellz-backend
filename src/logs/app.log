@@ -946,3 +946,705 @@
 {"isOperational":true,"level":"error","status":"fail","statusCode":401}
 {"level":"info","message":"Require auth called"}
 {"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"code":"LIMIT_UNEXPECTED_FILE","field":"otherPhotos","level":"error","message":"Unexpected field","name":"MulterError","storageErrors":[]}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"code":"LIMIT_UNEXPECTED_FILE","field":"otherPhotos","level":"error","message":"Unexpected field","name":"MulterError","storageErrors":[]}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"code":"LIMIT_UNEXPECTED_FILE","field":"otherPhotos","level":"error","message":"Unexpected field","name":"MulterError","storageErrors":[]}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"code":"LIMIT_UNEXPECTED_FILE","field":"otherPhotos","level":"error","message":"Unexpected field","name":"MulterError","storageErrors":[]}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"code":"LIMIT_UNEXPECTED_FILE","field":"otherPhotos","level":"error","message":"Unexpected field","name":"MulterError","storageErrors":[]}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"code":"LIMIT_UNEXPECTED_FILE","field":"otherPhotos","level":"error","message":"Unexpected field","name":"MulterError","storageErrors":[]}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"error"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"isOperational":true,"level":"error","status":"fail","statusCode":400,"storageErrors":[]}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Creating a new user..."}
+{"level":"info","message":"Uploading file..."}
+{"http_code":400,"level":"error","message":"Missing required parameter - file","name":"Error"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Creating a new user..."}
+{"level":"info","message":"Uploading file..."}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Creating a new user..."}
+{"level":"info","message":"Uploading file..."}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Creating a new user..."}
+{"level":"info","message":"Uploading file..."}
+{"level":"info","message":"Done uploading file..."}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Creating a new user..."}
+{"level":"info","message":"Uploading file..."}
+{"level":"info","message":"Done uploading file..."}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"isOperational":true,"level":"error","status":"fail","statusCode":401}
+{"isOperational":true,"level":"error","status":"fail","statusCode":404}
+{"isOperational":true,"level":"error","status":"fail","statusCode":404}
+{"level":"info","message":"Creating a new user..."}
+{"level":"info","message":"Uploading file..."}
+{"level":"info","message":"Done uploading file..."}
+{"errors":[{"instance":{"address":"48932 Bunker Hill Crossing","birthdate":"1998-11-30","country":"Ghana","createdAt":"2023-11-05T23:12:33.777Z","email":"alouismariea97@gmail.com","firstName":"Louis Marie","gender":"M","lastName":"Ayariga","passwordHash":"$2b$10$BrlywjI9FZhBSi0U0i9dyuR4jlSMW/QeDeOW8D1F3gJ/24sg3MJzC","profilePicture":"http://res.cloudinary.com/marieloumar/image/upload/v1699225955/sellz-profile-pictures/owg54ewqzsgxnguj8kdh.jpg","updatedAt":"2023-11-05T23:12:33.777Z","userId":"66e18c65-31f0-4140-b333-7e6a74cbc517"},"message":"email must be unique","origin":"DB","path":"email","type":"unique violation","validatorArgs":[],"validatorKey":"not_unique","validatorName":null,"value":"alouismariea97@gmail.com"}],"fields":{"email":"alouismariea97@gmail.com"},"level":"error","name":"SequelizeUniqueConstraintError","original":{"code":"ER_DUP_ENTRY","errno":1062,"parameters":["66e18c65-31f0-4140-b333-7e6a74cbc517","Louis Marie","Ayariga","1998-11-30","M","Ghana","alouismariea97@gmail.com","48932 Bunker Hill Crossing","http://res.cloudinary.com/marieloumar/image/upload/v1699225955/sellz-profile-pictures/owg54ewqzsgxnguj8kdh.jpg","$2b$10$BrlywjI9FZhBSi0U0i9dyuR4jlSMW/QeDeOW8D1F3gJ/24sg3MJzC","2023-11-05 23:12:33","2023-11-05 23:12:33"],"sql":"INSERT INTO `users` (`userId`,`firstName`,`lastName`,`birthdate`,`gender`,`country`,`email`,`address`,`profilePicture`,`passwordHash`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?);","sqlMessage":"Duplicate entry 'alouismariea97@gmail.com' for key 'users.email'","sqlState":"23000"},"parent":{"code":"ER_DUP_ENTRY","errno":1062,"parameters":["66e18c65-31f0-4140-b333-7e6a74cbc517","Louis Marie","Ayariga","1998-11-30","M","Ghana","alouismariea97@gmail.com","48932 Bunker Hill Crossing","http://res.cloudinary.com/marieloumar/image/upload/v1699225955/sellz-profile-pictures/owg54ewqzsgxnguj8kdh.jpg","$2b$10$BrlywjI9FZhBSi0U0i9dyuR4jlSMW/QeDeOW8D1F3gJ/24sg3MJzC","2023-11-05 23:12:33","2023-11-05 23:12:33"],"sql":"INSERT INTO `users` (`userId`,`firstName`,`lastName`,`birthdate`,`gender`,`country`,`email`,`address`,`profilePicture`,`passwordHash`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?);","sqlMessage":"Duplicate entry 'alouismariea97@gmail.com' for key 'users.email'","sqlState":"23000"},"sql":"INSERT INTO `users` (`userId`,`firstName`,`lastName`,`birthdate`,`gender`,`country`,`email`,`address`,`profilePicture`,`passwordHash`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?);"}
+{"level":"info","message":"Require auth called"}
+{"isOperational":true,"level":"error","status":"fail","statusCode":401}
+{"level":"info","message":"Signing user in..."}
+{"isOperational":true,"level":"error","status":"fail","statusCode":401}
+{"level":"info","message":"Signing user in..."}
+{"level":"info","message":"User signed in successfully!"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Signing user in..."}
+{"level":"info","message":"User signed in successfully!"}
+{"level":"info","message":"Require auth called"}
+{"isOperational":true,"level":"error","status":"fail","statusCode":401}
+{"level":"info","message":"Signing user in..."}
+{"level":"info","message":"User signed in successfully!"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Creating a new user..."}
+{"level":"error"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Creating a new user..."}
+{"level":"info","message":"Uploading file..."}
+{"level":"info","message":"Done uploading file..."}
+{"level":"info","message":"Signing user in..."}
+{"level":"info","message":"User signed in successfully!"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Uploading file..."}
+{"level":"info","message":"Done uploading file..."}
+{"level":"error"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Uploading file..."}
+{"level":"info","message":"Done uploading file..."}
+{"level":"info","message":"Uploading file..."}
+{"level":"info","message":"Uploading file..."}
+{"level":"info","message":"Uploading file..."}
+{"level":"info","message":"Done uploading file..."}
+{"level":"info","message":"Done uploading file..."}
+{"level":"info","message":"Done uploading file..."}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228222505.png..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228222505.png..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228222506.webp..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228222507.vnd.microsoft.icon..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228222507.jpeg..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228222506.webp..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228222507.vnd.microsoft.icon..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228222507.jpeg..."}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228278233.png..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228278233.png..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228278234.webp..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228278235.vnd.microsoft.icon..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228278235.jpeg..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228278234.webp..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228278235.vnd.microsoft.icon..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228278235.jpeg..."}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228309982.png..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228309982.png..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228309983.webp..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228309983.vnd.microsoft.icon..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228309984.jpeg..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228309983.webp..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228309983.vnd.microsoft.icon..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228309984.jpeg..."}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228379786.png..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228379786.png..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228379788.webp..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228379789.vnd.microsoft.icon..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228379789.jpeg..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228379788.webp..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228379789.vnd.microsoft.icon..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228379789.jpeg..."}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228471008.png..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228471008.png..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228471009.webp..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228471010.vnd.microsoft.icon..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228471010.jpeg..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228471009.webp..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228471010.vnd.microsoft.icon..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228471010.jpeg..."}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228831343.png..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228831343.png..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228831344.webp..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228831344.webp..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228831345.vnd.microsoft.icon..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228831345.vnd.microsoft.icon..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228831345.jpeg..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228831345.jpeg..."}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228981475.png..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228981475.png..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228981475.webp..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228981475.webp..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228981476.vnd.microsoft.icon..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228981476.vnd.microsoft.icon..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228981476.jpeg..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699228981476.jpeg..."}
+{"level":"error"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699229086135.png..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699229086135.png..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699229086136.webp..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699229086136.webp..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699229086136.vnd.microsoft.icon..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699229086136.vnd.microsoft.icon..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699229086137.jpeg..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699229086137.jpeg..."}
+{"level":"error"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699229176840.png..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699229176840.png..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699229176841.webp..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699229176841.webp..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699229176841.vnd.microsoft.icon..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699229176841.vnd.microsoft.icon..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699229176841.jpeg..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-bbb09548-10af-4534-8ae2-722cbfb2c375-1699229176841.jpeg..."}
+{"errors":[{"instance":{"coverPhoto":"http://res.cloudinary.com/marieloumar/image/upload/v1699229182/sellz-profile-pictures/qsnckvdloomotwn6o3hm.png","createdAt":"2023-11-06T00:06:25.881Z","otherPhotos":"\"http://res.cloudinary.com/marieloumar/image/upload/v1699229183/sellz-profile-pictures/qqcllko7xp2grd5wtaaw.webp[]http://res.cloudinary.com/marieloumar/image/upload/v1699229185/sellz-profile-pictures/pzniiyphlboz3egnjrlm.ico[]http://res.cloudinary.com/marieloumar/image/upload/v1699229187/sellz-profile-pictures/ks97uxdpth00ya2cp7n9.jpg\"","productId":null,"updatedAt":"2023-11-06T00:06:25.881Z"},"message":"product.name cannot be null","origin":"CORE","path":"name","type":"notNull Violation","validatorArgs":[],"validatorKey":"is_null","validatorName":null,"value":null},{"instance":{"coverPhoto":"http://res.cloudinary.com/marieloumar/image/upload/v1699229182/sellz-profile-pictures/qsnckvdloomotwn6o3hm.png","createdAt":"2023-11-06T00:06:25.881Z","otherPhotos":"\"http://res.cloudinary.com/marieloumar/image/upload/v1699229183/sellz-profile-pictures/qqcllko7xp2grd5wtaaw.webp[]http://res.cloudinary.com/marieloumar/image/upload/v1699229185/sellz-profile-pictures/pzniiyphlboz3egnjrlm.ico[]http://res.cloudinary.com/marieloumar/image/upload/v1699229187/sellz-profile-pictures/ks97uxdpth00ya2cp7n9.jpg\"","productId":null,"updatedAt":"2023-11-06T00:06:25.881Z"},"message":"product.unitPrice cannot be null","origin":"CORE","path":"unitPrice","type":"notNull Violation","validatorArgs":[],"validatorKey":"is_null","validatorName":null,"value":null},{"instance":{"coverPhoto":"http://res.cloudinary.com/marieloumar/image/upload/v1699229182/sellz-profile-pictures/qsnckvdloomotwn6o3hm.png","createdAt":"2023-11-06T00:06:25.881Z","otherPhotos":"\"http://res.cloudinary.com/marieloumar/image/upload/v1699229183/sellz-profile-pictures/qqcllko7xp2grd5wtaaw.webp[]http://res.cloudinary.com/marieloumar/image/upload/v1699229185/sellz-profile-pictures/pzniiyphlboz3egnjrlm.ico[]http://res.cloudinary.com/marieloumar/image/upload/v1699229187/sellz-profile-pictures/ks97uxdpth00ya2cp7n9.jpg\"","productId":null,"updatedAt":"2023-11-06T00:06:25.881Z"},"message":"product.description cannot be null","origin":"CORE","path":"description","type":"notNull Violation","validatorArgs":[],"validatorKey":"is_null","validatorName":null,"value":null},{"instance":{"coverPhoto":"http://res.cloudinary.com/marieloumar/image/upload/v1699229182/sellz-profile-pictures/qsnckvdloomotwn6o3hm.png","createdAt":"2023-11-06T00:06:25.881Z","otherPhotos":"\"http://res.cloudinary.com/marieloumar/image/upload/v1699229183/sellz-profile-pictures/qqcllko7xp2grd5wtaaw.webp[]http://res.cloudinary.com/marieloumar/image/upload/v1699229185/sellz-profile-pictures/pzniiyphlboz3egnjrlm.ico[]http://res.cloudinary.com/marieloumar/image/upload/v1699229187/sellz-profile-pictures/ks97uxdpth00ya2cp7n9.jpg\"","productId":null,"updatedAt":"2023-11-06T00:06:25.881Z"},"message":"product.quantityInStock cannot be null","origin":"CORE","path":"quantityInStock","type":"notNull Violation","validatorArgs":[],"validatorKey":"is_null","validatorName":null,"value":null}],"level":"error","name":"SequelizeValidationError"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"isOperational":true,"level":"error","status":"fail","statusCode":401}
+{"level":"info","message":"Creating a new user..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-alouismariea97-1699230030748.jpeg..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-alouismariea97-1699230030748.jpeg..."}
+{"level":"info","message":"Signing user in..."}
+{"level":"info","message":"User signed in successfully!"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-9166e14d-8e36-4993-a403-18a81d818318-1699230044475.jpeg..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-9166e14d-8e36-4993-a403-18a81d818318-1699230044475.jpeg..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-9166e14d-8e36-4993-a403-18a81d818318-1699230044490.jpeg..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-9166e14d-8e36-4993-a403-18a81d818318-1699230044490.jpeg..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-9166e14d-8e36-4993-a403-18a81d818318-1699230044498.jpeg..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-9166e14d-8e36-4993-a403-18a81d818318-1699230044498.jpeg..."}
+{"level":"info","message":"Uploading file: src/public/img/new-user/user-9166e14d-8e36-4993-a403-18a81d818318-1699230044500.jpeg..."}
+{"level":"info","message":"Done uploading file: src/public/img/new-user/user-9166e14d-8e36-4993-a403-18a81d818318-1699230044500.jpeg..."}
+{"level":"error","name":"SequelizeDatabaseError","original":{"code":"ER_DATA_TOO_LONG","errno":1406,"parameters":["Luxurious Serenity","http://res.cloudinary.com/marieloumar/image/upload/v1699230061/sellz-profile-pictures/ga7qqlha21vizln73nag.jpg","\"http://res.cloudinary.com/marieloumar/image/upload/v1699230083/sellz-profile-pictures/oezjla6iivftahsuhvzl.jpg[]http://res.cloudinary.com/marieloumar/image/upload/v1699230089/sellz-profile-pictures/nbxnmdx1meb6i3yfibby.jpg[]http://res.cloudinary.com/marieloumar/image/upload/v1699230106/sellz-profile-pictures/sjubugpqx421g6yp0cyx.jpg\"","20.99","Sink into the sumptuous embrace of the Serenity Armchair, where plush comfort meets sophisticated design. Its ergonomically designed cushions mold to your body's contours, providing unparalleled support while its refined lines exude elegance. From curled up with a book to simply enjoying a cup of tea, the Serenity Armchair elevates your moments of leisure to new heights. Embrace the Serenity Armchair and discover the art of effortless relaxation.","25","2023-11-06 00:21:45","2023-11-06 00:21:45"],"sql":"INSERT INTO `products` (`productId`,`name`,`coverPhoto`,`otherPhotos`,`unitPrice`,`description`,`quantityInStock`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?,?);","sqlMessage":"Data too long for column 'otherPhotos' at row 1","sqlState":"22001"},"parameters":["Luxurious Serenity","http://res.cloudinary.com/marieloumar/image/upload/v1699230061/sellz-profile-pictures/ga7qqlha21vizln73nag.jpg","\"http://res.cloudinary.com/marieloumar/image/upload/v1699230083/sellz-profile-pictures/oezjla6iivftahsuhvzl.jpg[]http://res.cloudinary.com/marieloumar/image/upload/v1699230089/sellz-profile-pictures/nbxnmdx1meb6i3yfibby.jpg[]http://res.cloudinary.com/marieloumar/image/upload/v1699230106/sellz-profile-pictures/sjubugpqx421g6yp0cyx.jpg\"","20.99","Sink into the sumptuous embrace of the Serenity Armchair, where plush comfort meets sophisticated design. Its ergonomically designed cushions mold to your body's contours, providing unparalleled support while its refined lines exude elegance. From curled up with a book to simply enjoying a cup of tea, the Serenity Armchair elevates your moments of leisure to new heights. Embrace the Serenity Armchair and discover the art of effortless relaxation.","25","2023-11-06 00:21:45","2023-11-06 00:21:45"],"parent":{"code":"ER_DATA_TOO_LONG","errno":1406,"parameters":["Luxurious Serenity","http://res.cloudinary.com/marieloumar/image/upload/v1699230061/sellz-profile-pictures/ga7qqlha21vizln73nag.jpg","\"http://res.cloudinary.com/marieloumar/image/upload/v1699230083/sellz-profile-pictures/oezjla6iivftahsuhvzl.jpg[]http://res.cloudinary.com/marieloumar/image/upload/v1699230089/sellz-profile-pictures/nbxnmdx1meb6i3yfibby.jpg[]http://res.cloudinary.com/marieloumar/image/upload/v1699230106/sellz-profile-pictures/sjubugpqx421g6yp0cyx.jpg\"","20.99","Sink into the sumptuous embrace of the Serenity Armchair, where plush comfort meets sophisticated design. Its ergonomically designed cushions mold to your body's contours, providing unparalleled support while its refined lines exude elegance. From curled up with a book to simply enjoying a cup of tea, the Serenity Armchair elevates your moments of leisure to new heights. Embrace the Serenity Armchair and discover the art of effortless relaxation.","25","2023-11-06 00:21:45","2023-11-06 00:21:45"],"sql":"INSERT INTO `products` (`productId`,`name`,`coverPhoto`,`otherPhotos`,`unitPrice`,`description`,`quantityInStock`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?,?);","sqlMessage":"Data too long for column 'otherPhotos' at row 1","sqlState":"22001"},"sql":"INSERT INTO `products` (`productId`,`name`,`coverPhoto`,`otherPhotos`,`unitPrice`,`description`,`quantityInStock`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?,?);"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"error"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"error","name":"SequelizeDatabaseError","original":{"code":"ER_DATA_TOO_LONG","errno":1406,"parameters":["Luxurious Serenity","here","\"here\"","20.99","Sink into the sumptuous embrace of the Serenity Armchair, where plush comfort meets sophisticated design. Its ergonomically designed cushions mold to your body's contours, providing unparalleled support while its refined lines exude elegance. From curled up with a book to simply enjoying a cup of tea, the Serenity Armchair elevates your moments of leisure to new heights. Embrace the Serenity Armchair and discover the art of effortless relaxation.","25","2023-11-06 00:32:00","2023-11-06 00:32:00"],"sql":"INSERT INTO `products` (`productId`,`name`,`coverPhoto`,`otherPhotos`,`unitPrice`,`description`,`quantityInStock`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?,?);","sqlMessage":"Data too long for column 'description' at row 1","sqlState":"22001"},"parameters":["Luxurious Serenity","here","\"here\"","20.99","Sink into the sumptuous embrace of the Serenity Armchair, where plush comfort meets sophisticated design. Its ergonomically designed cushions mold to your body's contours, providing unparalleled support while its refined lines exude elegance. From curled up with a book to simply enjoying a cup of tea, the Serenity Armchair elevates your moments of leisure to new heights. Embrace the Serenity Armchair and discover the art of effortless relaxation.","25","2023-11-06 00:32:00","2023-11-06 00:32:00"],"parent":{"code":"ER_DATA_TOO_LONG","errno":1406,"parameters":["Luxurious Serenity","here","\"here\"","20.99","Sink into the sumptuous embrace of the Serenity Armchair, where plush comfort meets sophisticated design. Its ergonomically designed cushions mold to your body's contours, providing unparalleled support while its refined lines exude elegance. From curled up with a book to simply enjoying a cup of tea, the Serenity Armchair elevates your moments of leisure to new heights. Embrace the Serenity Armchair and discover the art of effortless relaxation.","25","2023-11-06 00:32:00","2023-11-06 00:32:00"],"sql":"INSERT INTO `products` (`productId`,`name`,`coverPhoto`,`otherPhotos`,`unitPrice`,`description`,`quantityInStock`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?,?);","sqlMessage":"Data too long for column 'description' at row 1","sqlState":"22001"},"sql":"INSERT INTO `products` (`productId`,`name`,`coverPhoto`,`otherPhotos`,`unitPrice`,`description`,`quantityInStock`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?,?);"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Creating a new user..."}
+{"level":"info","message":"Signing user in..."}
+{"level":"info","message":"User signed in successfully!"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"isOperational":true,"level":"error","status":"fail","statusCode":401}
+{"level":"info","message":"Creating a new user..."}
+{"level":"info","message":"Signing user in..."}
+{"level":"info","message":"User signed in successfully!"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Creating a new user..."}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Creating a new user..."}
+{"level":"info","message":"Signing user in..."}
+{"level":"info","message":"User signed in successfully!"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"error","name":"SequelizeDatabaseError","original":{"code":"WARN_DATA_TRUNCATED","errno":1265,"parameters":["832210f1dd7c19f","Luxurious Serenity","here","\"here\"","20.99","Sink into the sumptuous embrace of the Serenity Armchair, where plush comfort meets sophisticated design. Its ergonomically designed cushions mold to your body's contours, providing unparalleled support while its refined lines exude elegance. From curled up with a book to simply enjoying a cup of tea, the Serenity Armchair elevates your moments of leisure to new heights. Embrace the Serenity Armchair and discover the art of effortless relaxation.","25","2023-11-06 00:53:17","2023-11-06 00:53:17"],"sql":"INSERT INTO `products` (`productId`,`name`,`coverPhoto`,`otherPhotos`,`unitPrice`,`description`,`quantityInStock`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?,?,?);","sqlMessage":"Data truncated for column 'productId' at row 1","sqlState":"01000"},"parameters":["832210f1dd7c19f","Luxurious Serenity","here","\"here\"","20.99","Sink into the sumptuous embrace of the Serenity Armchair, where plush comfort meets sophisticated design. Its ergonomically designed cushions mold to your body's contours, providing unparalleled support while its refined lines exude elegance. From curled up with a book to simply enjoying a cup of tea, the Serenity Armchair elevates your moments of leisure to new heights. Embrace the Serenity Armchair and discover the art of effortless relaxation.","25","2023-11-06 00:53:17","2023-11-06 00:53:17"],"parent":{"code":"WARN_DATA_TRUNCATED","errno":1265,"parameters":["832210f1dd7c19f","Luxurious Serenity","here","\"here\"","20.99","Sink into the sumptuous embrace of the Serenity Armchair, where plush comfort meets sophisticated design. Its ergonomically designed cushions mold to your body's contours, providing unparalleled support while its refined lines exude elegance. From curled up with a book to simply enjoying a cup of tea, the Serenity Armchair elevates your moments of leisure to new heights. Embrace the Serenity Armchair and discover the art of effortless relaxation.","25","2023-11-06 00:53:17","2023-11-06 00:53:17"],"sql":"INSERT INTO `products` (`productId`,`name`,`coverPhoto`,`otherPhotos`,`unitPrice`,`description`,`quantityInStock`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?,?,?);","sqlMessage":"Data truncated for column 'productId' at row 1","sqlState":"01000"},"sql":"INSERT INTO `products` (`productId`,`name`,`coverPhoto`,`otherPhotos`,`unitPrice`,`description`,`quantityInStock`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?,?,?);"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Require auth called"}
+{"isOperational":true,"level":"error","status":"fail","statusCode":401}
+{"level":"info","message":"Creating a new user..."}
+{"level":"info","message":"Signing user in..."}
+{"level":"info","message":"User signed in successfully!"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"isOperational":true,"level":"error","status":"error"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"isOperational":true,"level":"error","status":"error"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Creating a new user..."}
+{"level":"info","message":"Creating a new user..."}
+{"errors":[{"instance":{"address":"48932 Bunker Hill Crossing","birthdate":"1998-11-30","country":"Ghana","createdAt":"2023-11-06T01:26:03.628Z","email":"alouismariea97@gmail.com","firstName":"Louis Marie","gender":"M","lastName":"Ayariga","passwordHash":"$2b$10$Klb1E.Zvf/ofWFn5WvbEfOWZqOWrmRoNTKXflJuWAE9XkBhyDJNFS","profilePicture":"http://res.cloudinary.com/marieloumar/image/upload/v1699230037/sellz-profile-pictures/hbmzdskycn6d48rbfnpr.jpg","updatedAt":"2023-11-06T01:26:03.628Z","userId":"40e15355434cd0f"},"message":"email must be unique","origin":"DB","path":"email","type":"unique violation","validatorArgs":[],"validatorKey":"not_unique","validatorName":null,"value":"alouismariea97@gmail.com"}],"fields":{"email":"alouismariea97@gmail.com"},"level":"error","name":"SequelizeUniqueConstraintError","original":{"code":"ER_DUP_ENTRY","errno":1062,"parameters":["40e15355434cd0f","Louis Marie","Ayariga","1998-11-30","M","Ghana","alouismariea97@gmail.com","48932 Bunker Hill Crossing","http://res.cloudinary.com/marieloumar/image/upload/v1699230037/sellz-profile-pictures/hbmzdskycn6d48rbfnpr.jpg","$2b$10$Klb1E.Zvf/ofWFn5WvbEfOWZqOWrmRoNTKXflJuWAE9XkBhyDJNFS","2023-11-06 01:26:03","2023-11-06 01:26:03"],"sql":"INSERT INTO `users` (`userId`,`firstName`,`lastName`,`birthdate`,`gender`,`country`,`email`,`address`,`profilePicture`,`passwordHash`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?);","sqlMessage":"Duplicate entry 'alouismariea97@gmail.com' for key 'users.email'","sqlState":"23000"},"parent":{"code":"ER_DUP_ENTRY","errno":1062,"parameters":["40e15355434cd0f","Louis Marie","Ayariga","1998-11-30","M","Ghana","alouismariea97@gmail.com","48932 Bunker Hill Crossing","http://res.cloudinary.com/marieloumar/image/upload/v1699230037/sellz-profile-pictures/hbmzdskycn6d48rbfnpr.jpg","$2b$10$Klb1E.Zvf/ofWFn5WvbEfOWZqOWrmRoNTKXflJuWAE9XkBhyDJNFS","2023-11-06 01:26:03","2023-11-06 01:26:03"],"sql":"INSERT INTO `users` (`userId`,`firstName`,`lastName`,`birthdate`,`gender`,`country`,`email`,`address`,`profilePicture`,`passwordHash`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?);","sqlMessage":"Duplicate entry 'alouismariea97@gmail.com' for key 'users.email'","sqlState":"23000"},"sql":"INSERT INTO `users` (`userId`,`firstName`,`lastName`,`birthdate`,`gender`,`country`,`email`,`address`,`profilePicture`,`passwordHash`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?);"}
+{"level":"info","message":"Signing user in..."}
+{"level":"info","message":"User signed in successfully!"}
+{"isOperational":true,"level":"error","status":"error"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"isOperational":true,"level":"error","status":"error"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Creating a new user..."}
+{"level":"info","message":"Signing user in..."}
+{"level":"info","message":"User signed in successfully!"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Database connected."}
+{"level":"info","message":"server running at port: 8080"}
+{"level":"info","message":"Press CTRL + C to stop server"}
+{"level":"info","message":"Signing user in..."}
+{"level":"info","message":"User signed in successfully!"}
+{"isOperational":true,"level":"error","status":"fail","statusCode":404}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Update user called..."}
+{"level":"info","message":"Require auth called"}
+{"isOperational":true,"level":"error","status":"fail","statusCode":401}
+{"level":"info","message":"Signing user in..."}
+{"level":"info","message":"User signed in successfully!"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Update user called..."}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}
+{"level":"info","message":"Require auth called"}
+{"level":"info","message":"User Verified"}

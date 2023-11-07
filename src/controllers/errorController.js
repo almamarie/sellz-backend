@@ -13,6 +13,8 @@ const handleValidationErrorDB = (err) => {
 const handleJWTExpiredError = () =>
   new AppError('Your token has expired! Please log in again.', 401);
 
+const handleMulterError = () => new AppError('Invalid file', 400);
+
 const sendErrorDev = (err, res) => {
   res.status(err.statusCode).json({
     status: err.status,
@@ -33,7 +35,7 @@ const sendErrorProd = (err, res) => {
     // Programming or other unknown error: don't leak error details
   } else {
     // 1) Log error
-    console.error('ERROR 💥', err);
+    console.error('Send Prod ERROR 💥', err);
 
     // 2) Send generic message
     res.status(500).json({
@@ -61,6 +63,7 @@ module.exports = (err, req, res, next) => {
       if (error.name === 'SequelizeValidationError')
         error = handleValidationErrorDB(error);
       if (error.name === 'TokenExpiredError') error = handleJWTExpiredError();
+      if (error.name === 'MulterError') error = handleMulterError();
 
       sendErrorProd(error, res);
     }
