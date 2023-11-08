@@ -52,14 +52,12 @@ exports.postCreateUser = catchAsync(
 
     console.log('PasswordHash: ', passwordHash);
 
-    const userId = generateId();
     const profilePicture =
       'http://res.cloudinary.com/marieloumar/image/upload/v1699230037/sellz-profile-pictures/hbmzdskycn6d48rbfnpr.jpg' ||
       (await cloudinary.uploadSingleImage(profilePicturePath));
     const newUser = await User.create({
       ...req.body,
       passwordHash,
-      userId,
       profilePicture,
     });
 

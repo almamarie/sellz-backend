@@ -15,20 +15,24 @@ const Shipper = require('./src/models/Shipper.model');
 
 const app = require('./src/app.js');
 const PORT = process.env.PORT;
-User.hasMany(Product);
+User.hasMany(Product, { foreignKey: 'userId' });
+Product.hasOne(User);
+
 Product.hasMany(ProductReview);
 Product.hasOne(ProductCategory);
 Product.hasOne(ProductCondition);
 
 User.hasOne(Cart);
+Cart.hasOne(User);
+
 Product.belongsToMany(Cart, { through: CartItem });
 Product.belongsToMany(Order, { through: OrderItem });
 
 Product.hasOne(Shipper);
 
 sequelize
-  // .sync()
-  .sync({ force: true })
+  .sync()
+  // .sync({ force: true })
   .then(() => {
     logger.info('Database connected.');
     app.listen(PORT, () => {

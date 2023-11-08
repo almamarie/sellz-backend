@@ -7,6 +7,7 @@ const multer = require('multer');
 const { generateId } = require('../utils/generateId');
 
 const cloudinary = new CustomCloudinary();
+
 const multerStorage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, 'src/public/img/new-user');
@@ -17,7 +18,7 @@ const multerStorage = multer.diskStorage({
     const id = req.body.email
       ? req.body.email.split('@')[0]
       : req.params.userId;
-    cb(null, `user-${id}-${Date.now()}.${ext}`);
+    cb(null, `product-${id}-${Date.now()}.${ext}`);
   },
 });
 
@@ -43,13 +44,17 @@ exports.postCreateProduct = catchAsync(async (req, res, next) => {
   const otherPhotoPaths = req.files.otherPhotos.map((photo) => photo.path);
 
   const coverPhoto =
-    'here' || (await cloudinary.uploadSingleImage(coverPhotoPath));
+    'http://res.cloudinary.com/marieloumar/image/upload/v1699385089/sellz-profile-pictures/canflknvktctez3pceyo.jpg' ||
+    (await cloudinary.uploadSingleImage(coverPhotoPath));
   const otherPhotos =
-    ['here'] || (await cloudinary.uploadImages(otherPhotoPaths));
+    [
+      'http://res.cloudinary.com/marieloumar/image/upload/v1699385120/sellz-profile-pictures/ew88dtdunx2nh8javxom.jpg',
+      'http://res.cloudinary.com/marieloumar/image/upload/v1699385130/sellz-profile-pictures/xrab3lccxvoz7a8trxe5.jpg',
+      'http://res.cloudinary.com/marieloumar/image/upload/v1699385155/sellz-profile-pictures/vm45ftkxaapypcdahggg.jpg',
+    ] || (await cloudinary.uploadImages(otherPhotoPaths));
 
-  const productId = generateId();
+  console.log(`Cover Photo: ${coverPhoto}\nOtherPhotos: ${otherPhotos}`);
   const newProduct = await Product.create({
-    productId,
     ...req.body,
     coverPhoto,
     otherPhotos: JSON.stringify(otherPhotos.join('[]')),

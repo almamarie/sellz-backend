@@ -1,12 +1,14 @@
-const { STRING, INTEGER, NUMBER } = require('sequelize');
+const { STRING, INTEGER, NUMBER, UUID } = require('sequelize');
 const sequelize = require('../databases/sequelize');
+const { generateId } = require('../utils/generateId');
 
 const ProductReview = sequelize.define('product_review', {
   productReviewId: {
-    type: STRING,
+    type: UUID,
     allowNull: false,
     primaryKey: true,
     unique: true,
+    defaultValue: () => generateId(),
   },
 
   comment: {

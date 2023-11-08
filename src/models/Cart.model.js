@@ -1,12 +1,14 @@
-const { INTEGER, STRING } = require('sequelize');
+const { INTEGER, STRING, UUID } = require('sequelize');
 const sequelize = require('../databases/sequelize');
+const { generateId } = require('../utils/generateId');
 
 const Cart = sequelize.define('cart', {
   cartId: {
-    type: STRING,
+    type: UUID,
     allowNull: false,
     primaryKey: true,
     unique: true,
+    defaultValue: () => generateId(),
   },
 
   itemsNumber: {

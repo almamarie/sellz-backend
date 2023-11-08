@@ -1,12 +1,14 @@
-const { STRING, FLOAT } = require('sequelize');
+const { STRING, FLOAT, UUID } = require('sequelize');
 const sequelize = require('../databases/sequelize');
+const { generateId } = require('../utils/generateId');
 
 const Order = sequelize.define('order', {
   orderId: {
-    type: STRING,
+    type: UUID,
     allowNull: false,
     primaryKey: true,
     unique: true,
+    defaultValue: () => generateId(),
   },
 
   totalPrice: {

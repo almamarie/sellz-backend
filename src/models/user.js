@@ -1,13 +1,14 @@
 const crypto = require('crypto');
-const { INTEGER, STRING, DATE, NOW, DATEONLY } = require('sequelize');
+const { STRING, DATE, DATEONLY, UUID } = require('sequelize');
 const sequelize = require('../databases/sequelize');
-
+const { generateId } = require('../utils/generateId');
 const User = sequelize.define('user', {
   userId: {
-    type: STRING,
+    type: UUID,
     allowNull: false,
     primaryKey: true,
     unique: true,
+    defaultValue: () => generateId(),
   },
 
   firstName: {
