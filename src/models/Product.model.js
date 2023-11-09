@@ -52,6 +52,16 @@ const Product = sequelize.define(
       type: INTEGER,
       allowNull: false,
     },
+
+    rating: {
+      type: FLOAT,
+      allowNull: false,
+      defaultValue: 0,
+      validator: {
+        max: 5,
+        min: 0,
+      },
+    },
   },
 
   {
@@ -74,6 +84,7 @@ Product.prototype.format = function () {
     description: this.description,
     unitPrice: this.unitPrice,
     quantityInStock: this.quantityInStock,
+    rating: this.rating,
   };
 };
 

@@ -31,8 +31,8 @@ Product.belongsToMany(Order, { through: OrderItem });
 Product.hasOne(Shipper);
 
 sequelize
-  // .sync()
-  .sync({ force: true })
+  .sync()
+  // .sync({ force: true })
   .then(() => {
     logger.info('Database connected.');
     app.listen(PORT, () => {

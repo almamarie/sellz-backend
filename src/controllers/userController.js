@@ -7,6 +7,7 @@ const { deleteFile } = require('../utils/deleteFile');
 const catchAsync = require('../utils/catchAsync');
 const { generateHashPassword } = require('./authController');
 const CustomCloudinary = require('../databases/cloudinary');
+const AppError = require('../utils/appError');
 
 const cloudinary = new CustomCloudinary();
 
@@ -141,10 +142,12 @@ exports.fetchUser = (requestType) => {
     let userId;
     if (requestType === 'POST') userId = req.body.id || req.body.userId;
     else if (requestType === 'GET') userId = req.params.id || req.params.userId;
-    else next(new AppError('UserId not provided.', 400));
 
+    // console.log('User Id: ', userId);
+
+    if (!userId) return next(new AppError('User ID must be provided!', 400));
     const user = await User.findByPk(userId);
-    if (!user) next(new AppError('User not found.', 400));
+    if (!user) next(new AppError('User not found.', 404));
 
     req.user = user;
 

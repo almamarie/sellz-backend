@@ -5,6 +5,7 @@ const factory = require('./handlerFactory');
 const catchAsync = require('../utils/catchAsync');
 const multer = require('multer');
 const { generateId } = require('../utils/generateId');
+const User = require('../models/user');
 
 const cloudinary = new CustomCloudinary();
 
@@ -39,7 +40,7 @@ exports.uploadProductImages = upload.fields([
 
 exports.postCreateProduct = catchAsync(async (req, res, next) => {
   const user = req.user;
-
+  if (!user) throw next(AppError('User Id must be provided!', 400));
   const coverPhotoPath = req.files.coverPhoto[0].path;
   const otherPhotoPaths = req.files.otherPhotos.map((photo) => photo.path);
 
@@ -53,14 +54,18 @@ exports.postCreateProduct = catchAsync(async (req, res, next) => {
       'http://res.cloudinary.com/marieloumar/image/upload/v1699385155/sellz-profile-pictures/vm45ftkxaapypcdahggg.jpg',
     ] || (await cloudinary.uploadImages(otherPhotoPaths));
 
-  console.log(`Cover Photo: ${coverPhoto}\nOtherPhotos: ${otherPhotos}`);
-  const newProduct = await Product.build({
+  // console.log(`Cover Photo: ${coverPhoto}\nOtherPhotos: ${otherPhotos}`);
+  // const newProduct = await Product.build({
+  //   ...req.body,
+  //   coverPhoto,
+  //   otherPhotos: JSON.stringify(otherPhotos.join('[]')),
+  // });
+
+  await user.createProduct({
     ...req.body,
     coverPhoto,
     otherPhotos: JSON.stringify(otherPhotos.join('[]')),
   });
-
-  await user.addProduct(newProduct);
 
   const products = await user.getProducts();
   return res.status(201).send({
@@ -70,6 +75,63 @@ exports.postCreateProduct = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.getProduct = factory.getOne(Product);
-exports.getAllProducts = factory.getAll(Product);
-exports.deleteProduct = factory.deleteOne(Product);
+exports.getProduct = catchAsync(async (req, res, next) => {
+  console.log('Get product called...');
+
+  const product = req.product;
+
+  console.log('Product: ', product);
+  res.status(200).json({
+    status: 'success',
+    data: {
+      data: product.format(),
+    },
+  });
+});
+
+exports.getAllProducts = catchAsync(async (req, res, next) => {
+  const user = req.user;
+
+  const products = await user.getProducts();
+  // console.log('Products: ', products);
+
+  return res.status(201).send({
+    success: true,
+    results: products.length,
+    data: { products: products.map((product) => product.format()) },
+  });
+});
+
+exports.deleteProduct = catchAsync(async (req, res, next) => {
+  const user = req.user;
+  const product = req.product;
+
+  await user.removeProduct(product);
+  await product.destroy();
+
+  console.log('Done');
+  return res.status(204).json({
+    status: 'success',
+    data: 'null',
+  });
+});
+
+exports.fetchProduct = catchAsync(async (req, res, next) => {
+  const userId = req.params.userId;
+  if (!userId) return next(new AppError('User ID must be provided!', 400));
+
+  const user = await User.findByPk(userId);
+  if (!user) next(new AppError('User not found.', 404));
+  req.user = user;
+
+  const productId = req.params.productId;
+  if (!productId)
+    return next(new AppError('Product ID must be provided!', 400));
+
+  const product = await Product.findByPk(productId);
+  if (!product || !user.hasProduct(product))
+    return next(new AppError('Product not found!', 404));
+
+  req.product = product;
+  next();
+});
