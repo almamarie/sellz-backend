@@ -54,7 +54,7 @@ exports.postCreateProduct = catchAsync(async (req, res, next) => {
     ] || (await cloudinary.uploadImages(otherPhotoPaths));
 
   console.log(`Cover Photo: ${coverPhoto}\nOtherPhotos: ${otherPhotos}`);
-  const newProduct = await Product.create({
+  const newProduct = await Product.build({
     ...req.body,
     coverPhoto,
     otherPhotos: JSON.stringify(otherPhotos.join('[]')),
@@ -71,3 +71,5 @@ exports.postCreateProduct = catchAsync(async (req, res, next) => {
 });
 
 exports.getProduct = factory.getOne(Product);
+exports.getAllProducts = factory.getAll(Product);
+exports.deleteProduct = factory.deleteOne(Product);

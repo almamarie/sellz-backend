@@ -4,12 +4,12 @@ const productController = require('../controllers/productController');
 const { requireAuth } = require('../controllers/authController');
 const router = express.Router();
 
-router.post('/', userController.uploadUserPhoto, userController.postCreateUser);
+router.post('/', userController.postCreateUser);
 router.patch('/:userId/', requireAuth, userController.patchUpdateUser);
 router.patch(
   '/:userId/profile-picture/',
   requireAuth,
-  userController.uploadUserPhoto,
+  userController.uploadPhoto,
   userController.patchUpdateProfilePhoto
 );
 router.get('/:userId', requireAuth, userController.getUser);
@@ -18,13 +18,14 @@ router.delete('/:userId', requireAuth, userController.deleteUser);
 // product routes
 
 router.post(
-  '/:userId/products/',
+  '/:id/products/',
   requireAuth,
   userController.fetchUser('GET'), // used by 1 so far
   productController.uploadProductImages,
   productController.postCreateProduct
 );
 
-router.get('/:userId/products', requireAuth, userController.getUser);
+router.get('/:id/products', requireAuth, productController.getAllProducts);
+router.delete('/:id', requireAuth, productController.deleteProduct);
 
 module.exports = router;

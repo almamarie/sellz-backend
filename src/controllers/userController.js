@@ -32,47 +32,14 @@ const multerFilter = (req, file, cb) => {
 
 const upload = multer({ storage: multerStorage, fileFilter: multerFilter });
 
-exports.uploadUserPhoto = upload.single('profilePicture');
+exports.uploadPhoto = upload.single('profilePicture');
 
-exports.postCreateUser = catchAsync(
-  async (req, res, next) => {
-    logger.info('Creating a new user...');
-    const profilePicturePath = req.file.path;
-
-    const identicalUser = await User.findAll({
-      where: { email: req.body.email },
-    });
-
-    if (identicalUser.length > 1) throw new Error('User may already exists');
-
-    if (req.body.password.length < 8)
-      throw new Error('provided password is not strong');
-
-    const passwordHash = await generateHashPassword(req.body.password);
-
-    console.log('PasswordHash: ', passwordHash);
-
-    const profilePicture =
-      'http://res.cloudinary.com/marieloumar/image/upload/v1699230037/sellz-profile-pictures/hbmzdskycn6d48rbfnpr.jpg' ||
-      (await cloudinary.uploadSingleImage(profilePicturePath));
-    const newUser = await User.create({
-      ...req.body,
-      passwordHash,
-      profilePicture,
-    });
-
-    deleteFile(profilePicturePath);
-
-    return res.status(201).send({
-      success: true,
-      data: { user: newUser.format() },
-    });
-  },
-  (req, res) => {
-    const profilePicture = req.file.path;
-    deleteFile(profilePicture);
-  }
-);
+exports.postCreateUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not defined! Please use /signup instead',
+  });
+};
 
 exports.patchUpdateUser = catchAsync(async (req, res) => {
   logger.info('Update user called...');
@@ -106,18 +73,22 @@ exports.patchUpdateUser = catchAsync(async (req, res) => {
   }
 });
 
-exports.patchUpdateProfilePhoto = async (req, res) => {
-  logger.info('Creating a new user...');
-  const profilePicturePath = req.file.path;
+exports.patchUpdateProfilePhoto = catchAsync(
+  async (req, res) => {
+    logger.info('Creating a new user...');
+    const profilePicturePath = req.file.path;
 
-  try {
+    // try {
     const userId = req.params.userId;
     const user = await User.findByPk(userId);
     if (!user) {
       new AppError('User may not exist', 404);
     }
 
-    const profilePicture = await cloudinaryImageUpload(profilePicturePath);
+    const profilePicture =
+      'http://res.cloudinary.com/marieloumar/image/upload/v1699538930/sellz-profile-pictures/ekc12jmukbcy8mjua3d2.jpg' ||
+      (await cloudinary.uploadSingleImage(profilePicturePath));
+    console.log('profilePicture: ', profilePicture);
 
     await user.update({ profilePicture });
     await user.save();
@@ -128,14 +99,12 @@ exports.patchUpdateProfilePhoto = async (req, res) => {
       success: true,
       data: { user: user.format() },
     });
-  } catch (error) {
-    console.log(error);
-    deleteFile(profilePicturePath);
-    return res
-      .status(400)
-      .send({ success: false, body: 'Error creating user.' });
+  },
+  (req, res) => {
+    const profilePicture = req.file.path;
+    deleteFile(profilePicture);
   }
-};
+);
 
 exports.getUser = async (req, res) => {
   try {
@@ -170,8 +139,8 @@ exports.deleteUser = async (req, res) => {
 exports.fetchUser = (requestType) => {
   return catchAsync(async (req, res, next) => {
     let userId;
-    if (requestType === 'POST') userId = req.body.userId;
-    else if (requestType === 'GET') userId = req.params.userId;
+    if (requestType === 'POST') userId = req.body.id || req.body.userId;
+    else if (requestType === 'GET') userId = req.params.id || req.params.userId;
     else next(new AppError('UserId not provided.', 400));
 
     const user = await User.findByPk(userId);
