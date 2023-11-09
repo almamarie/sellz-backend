@@ -1,5 +1,5 @@
 const crypto = require('crypto');
-const { STRING, DATE, DATEONLY, UUID } = require('sequelize');
+const { STRING, DATE, DATEONLY, UUID, NOW } = require('sequelize');
 const sequelize = require('../databases/sequelize');
 const { generateId } = require('../utils/generateId');
 const User = sequelize.define('user', {
@@ -79,6 +79,12 @@ const User = sequelize.define('user', {
     type: DATE,
     allowNull: true,
   },
+
+  passwordChangedAt: {
+    type: DATE,
+    allowNull: false,
+    defaultValue: NOW,
+  },
 });
 
 User.prototype.format = function () {
@@ -112,8 +118,11 @@ User.prototype.createPasswordResetToken = function () {
 };
 
 User.prototype.changedPasswordAfter = function (JWTTimestamp) {
-  if (this.updatedAt) {
-    const changedTimestamp = parseInt(this.updatedAt.getTime() / 1000, 10);
+  if (this.updatedAt && this.passwordChangedAt) {
+    const changedTimestamp = parseInt(
+      this.passwordChangedAt.getTime() / 1000,
+      10
+    );
 
     return JWTTimestamp < changedTimestamp;
   }

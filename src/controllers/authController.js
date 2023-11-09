@@ -244,7 +244,7 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
     .update(req.params.token)
     .digest('hex');
 
-  console.log('Hashed Token: ', hashedToken);
+  // console.log('Hashed Token: ', hashedToken);
 
   const user = await User.findOne({
     where: {
@@ -265,6 +265,7 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
     passwordHash: await this.generateHashPassword(req.body.password),
     passwordResetToken: undefined,
     passwordResetExpires: undefined,
+    passwordChangedAt: Date.now(),
   });
   await user.save();
 
@@ -281,6 +282,7 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
 
   user.update({
     passwordHash: await this.generateHashPassword(req.body.newPassword),
+    passwordChangedAt: Date.now(),
   });
   const updatedUser = await user.save();
 
