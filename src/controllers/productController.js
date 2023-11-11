@@ -6,12 +6,13 @@ const catchAsync = require('../utils/catchAsync');
 const multer = require('multer');
 const { generateId } = require('../utils/generateId');
 const User = require('../models/user');
+const { deleteFile, deleteFiles } = require('../utils/deleteFile');
 
 const cloudinary = new CustomCloudinary();
 
 const multerStorage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'src/public/img/new-user');
+    cb(null, 'src/public/img/new-product');
   },
 
   filename: (req, file, cb) => {
@@ -38,42 +39,48 @@ exports.uploadProductImages = upload.fields([
   { name: 'otherPhotos', maxCount: 5 },
 ]);
 
-exports.postCreateProduct = catchAsync(async (req, res, next) => {
-  const user = req.user;
-  if (!user) throw next(AppError('User Id must be provided!', 400));
-  const coverPhotoPath = req.files.coverPhoto[0].path;
-  const otherPhotoPaths = req.files.otherPhotos.map((photo) => photo.path);
+exports.postCreateProduct = catchAsync(
+  async (req, res, next) => {
+    const user = req.user;
+    if (!user) throw next(AppError('User Id must be provided!', 400));
+    const coverPhotoPath = req.files.coverPhoto[0].path;
+    const otherPhotoPaths = req.files.otherPhotos.map((photo) => photo.path);
 
-  const coverPhoto =
-    'http://res.cloudinary.com/marieloumar/image/upload/v1699385089/sellz-profile-pictures/canflknvktctez3pceyo.jpg' ||
-    (await cloudinary.uploadSingleImage(coverPhotoPath));
-  const otherPhotos =
-    [
-      'http://res.cloudinary.com/marieloumar/image/upload/v1699385120/sellz-profile-pictures/ew88dtdunx2nh8javxom.jpg',
-      'http://res.cloudinary.com/marieloumar/image/upload/v1699385130/sellz-profile-pictures/xrab3lccxvoz7a8trxe5.jpg',
-      'http://res.cloudinary.com/marieloumar/image/upload/v1699385155/sellz-profile-pictures/vm45ftkxaapypcdahggg.jpg',
-    ] || (await cloudinary.uploadImages(otherPhotoPaths));
+    const coverPhoto =
+      'http://res.cloudinary.com/marieloumar/image/upload/v1699385089/sellz-profile-pictures/canflknvktctez3pceyo.jpg' ||
+      (await cloudinary.uploadSingleImage(coverPhotoPath));
+    const otherPhotos =
+      [
+        'http://res.cloudinary.com/marieloumar/image/upload/v1699385120/sellz-profile-pictures/ew88dtdunx2nh8javxom.jpg',
+        'http://res.cloudinary.com/marieloumar/image/upload/v1699385130/sellz-profile-pictures/xrab3lccxvoz7a8trxe5.jpg',
+        'http://res.cloudinary.com/marieloumar/image/upload/v1699385155/sellz-profile-pictures/vm45ftkxaapypcdahggg.jpg',
+      ] || (await cloudinary.uploadImages(otherPhotoPaths));
 
-  // console.log(`Cover Photo: ${coverPhoto}\nOtherPhotos: ${otherPhotos}`);
-  // const newProduct = await Product.build({
-  //   ...req.body,
-  //   coverPhoto,
-  //   otherPhotos: JSON.stringify(otherPhotos.join('[]')),
-  // });
+    await user.createProduct({
+      ...req.body,
+      coverPhoto,
+      otherPhotos: JSON.stringify(otherPhotos.join('[]')),
+    });
 
-  await user.createProduct({
-    ...req.body,
-    coverPhoto,
-    otherPhotos: JSON.stringify(otherPhotos.join('[]')),
-  });
+    const products = await user.getProducts();
 
-  const products = await user.getProducts();
-  return res.status(201).send({
-    success: true,
-    results: products.length,
-    data: { products: products.map((product) => product.format()) },
-  });
-});
+    deleteFiles([coverPhotoPath, ...otherPhotoPaths]);
+
+    return res.status(201).send({
+      success: true,
+      results: products.length,
+      data: { products: products.map((product) => product.format()) },
+    });
+  },
+  (req, res) => {
+    const filePaths = [
+      req.files.coverPhoto[0].path,
+      ...req.files.otherPhotos.map((photo) => photo.path),
+    ];
+    // console.log('File paths: ', filePaths);
+    deleteFiles(filePaths);
+  }
+);
 
 exports.getProduct = catchAsync(async (req, res, next) => {
   console.log('Get product called...');

@@ -1,3 +1,5 @@
 node_modules
 .env
 src/logs/app.log
+src/public/img/new-product
+src/public/img/new-user
