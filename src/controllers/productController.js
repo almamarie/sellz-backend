@@ -1,12 +1,10 @@
 const CustomCloudinary = require('../databases/cloudinary');
 const Product = require('../models/Product.model');
 const AppError = require('../utils/appError');
-const factory = require('./handlerFactory');
 const catchAsync = require('../utils/catchAsync');
 const multer = require('multer');
-const { generateId } = require('../utils/generateId');
 const User = require('../models/user');
-const { deleteFile, deleteFiles } = require('../utils/deleteFile');
+const { deleteFiles } = require('../utils/deleteFile');
 
 const cloudinary = new CustomCloudinary();
 

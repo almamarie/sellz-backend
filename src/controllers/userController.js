@@ -1,11 +1,8 @@
 const User = require('../models/user');
 const logger = require('../logs/logger');
 const multer = require('multer');
-const { generateId } = require('../utils/generateId');
-// const { cloudinaryUploadImage } = require('../databases/cloudinary');
 const { deleteFile } = require('../utils/deleteFile');
 const catchAsync = require('../utils/catchAsync');
-const { generateHashPassword } = require('./authController');
 const CustomCloudinary = require('../databases/cloudinary');
 const AppError = require('../utils/appError');
 
