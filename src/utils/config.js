@@ -1,27 +1,3 @@
-// const config = {
-//   dev: {
-//     username: process.env.SQL_USERNAME,
-//     password: process.env.SQL_PASSWORD,
-//     database: process.env.SQL_DATABASE,
-//     host: process.env.SQL_HOST,
-//     dialect: process.env.DIALECT,
-//     port: process.env.SQL_PORT,
-//   },
-
-//   jwt: {
-//     secret:
-//       'aivhuvgwuVEWuvbew9uviwepvp879wef8fqfbqf8qp78fqwfihqfpiuqfgeaucasvuiasvavhioavg89arvhiosbvsjvasyv',
-//     duration: process.env.JWT_DURATION,
-//   },
-//   prod: {
-//     username: '',
-//     password: '',
-//     database: 'udagram_prod',
-//     host: '',
-//     dialect: 'postgres',
-//   },
-// };
-
 class Config {
   constructor() {
     this.username = process.env.SQL_USERNAME;
@@ -42,6 +18,10 @@ class Config {
       emailPort: process.env.EMAIL_PORT,
       emailUsername: process.env.EMAIL_USERNAME,
       emailPassword: process.env.EMAIL_PASSWORD,
+    };
+    this.payment = {
+      PAYMENT_BASE_URL: process.env.PAYSTACK_BASE_URL,
+      PAYMENT_SECRET_KEY: process.env.PAYSTACK_SECRET_KEY,
     };
   }
 }
