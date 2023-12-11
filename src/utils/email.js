@@ -1,5 +1,5 @@
 const nodemailer = require('nodemailer');
-const Config = require('../config/config');
+const Config = require('../utils/config');
 
 const config = new Config();
 
