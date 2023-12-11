@@ -35,6 +35,19 @@ sequelize
   // .sync({ force: true })
   .then(() => {
     logger.info('Database connected.');
+    // User.create({
+    //   firstName: 'Super',
+    //   lastName: 'Admin',
+    //   otherNames: null,
+    //   birthdate: '1972-01-12',
+    //   gender: 'M',
+    //   country: 'Ghana',
+    //   email: 'super@admin.com',
+    //   address: '48932 Bunker Hill Crossing',
+    //   profilePicture:
+    //     'http://res.cloudinary.com/marieloumar/image/upload/v1699230037/sellz-profile-pictures/hbmzdskycn6d48rbfnpr.jpg',
+    //   userType: 'SuperAdmin',
+    // });
     app.listen(PORT, () => {
       logger.info(`server running at port: ${PORT}`);
       logger.info('Press CTRL + C to stop server');

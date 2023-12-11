@@ -39,8 +39,10 @@ exports.uploadProductImages = upload.fields([
 
 exports.postCreateProduct = catchAsync(
   async (req, res, next) => {
+    console.log('creating a new product');
     const user = req.user;
     if (!user) throw next(AppError('User Id must be provided!', 400));
+    console.log('Files: ', req.files.otherPhotos);
     const coverPhotoPath = req.files.coverPhoto[0].path;
     const otherPhotoPaths = req.files.otherPhotos.map((photo) => photo.path);
 

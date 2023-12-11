@@ -9,11 +9,14 @@ const Config = require('../utils/config');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const sendEmail = require('../utils/email');
+const fs = require('fs');
+const os = require('os');
 
 // const { cloudinaryUploadImage } = require('../databases/cloudinary');
 const { deleteFile } = require('../utils/deleteFile');
 // const { generateHashPassword } = require('./authController');
 const CustomCloudinary = require('../databases/cloudinary');
+const { roles, permissions } = require('../utils/roles-permissions');
 const config = new Config();
 
 // =================================================================================
@@ -50,7 +53,7 @@ comparePasswords = async (plainTextPassword, hashedPassword) => {
   return await bcrypt.compare(plainTextPassword, hashedPassword);
 };
 
-generateJwt = async (userId) => {
+generateJwt = async (userId, role) => {
   const duration = 60 * 60 * config.jwt.duration;
 
   const payloadData = {
@@ -59,14 +62,14 @@ generateJwt = async (userId) => {
     aud: 'https://sellz.com',
     exp: Math.floor(Date.now() / 1000) + duration,
     iat: Math.floor(Date.now() / 1000),
-    roles: ['user'],
+    role: role,
   };
 
   return jwt.sign(payloadData, config.jwt.secret);
 };
 
 const createSendToken = async (user, statusCode, res) => {
-  const token = await generateJwt(user.userId);
+  const token = await generateJwt(user.userId, user.role);
 
   const cookieOptions = {
     expires: new Date(Date.now() + config.jwtCookieExpiresIn * 60 * 60 * 1000),
@@ -105,9 +108,16 @@ exports.signIn = catchAsync(async (req, res, next) => {
 
 exports.signup = catchAsync(
   async (req, res, next) => {
-    logger.info('Creating a new user...');
+    const { role } = req.params;
+    logger.info(`Creating a new ${role} user...`);
+
+    if (!roles.includes(role)) {
+      console.log('role');
+      next(new AppError('Invalid user type.', 400));
+    }
+
     if (!req.file) next(new AppError('Profile picture not found.', 400));
-    // console.log(req.file);
+
     const profilePicturePath = req.file.path;
 
     const identicalUser = await User.findAll({
@@ -121,22 +131,15 @@ exports.signup = catchAsync(
 
     const passwordHash = await generateHashPassword(req.body.password);
 
-    // console.log('PasswordHash: ', passwordHash);
-
     const profilePicture =
       'http://res.cloudinary.com/marieloumar/image/upload/v1699230037/sellz-profile-pictures/hbmzdskycn6d48rbfnpr.jpg' ||
       (await cloudinary.uploadSingleImage(profilePicturePath));
     const newUser = await User.create({
       ...req.body,
+      role,
       passwordHash,
       profilePicture,
     });
-    exports.createUser = (req, res) => {
-      res.status(500).json({
-        status: 'error',
-        message: 'This route is not defined! Please use /signup instead',
-      });
-    };
 
     deleteFile(profilePicturePath);
 
@@ -155,39 +158,53 @@ generateHashPassword = async (password) => {
   return hash;
 };
 
-exports.requireAuth = catchAsync(async (req, res, next) => {
-  logger.info('Require auth called');
-  if (!req.headers || !req.headers.authorization)
-    return new AppError('No authorization headers.', 401);
+exports.requireAuth = (permission) => {
+  return catchAsync(async (req, res, next) => {
+    logger.info('Require auth called');
 
-  const tokenBearer = req.headers.authorization.split(' ');
-  if (tokenBearer.length !== 2) return new AppError('Malformed token.', 401);
+    console.log('Permission: ', permission);
 
-  const token = tokenBearer[1];
-  const jwtResponse = jwt.verify(token, config.jwt.secret);
+    if (!req.headers || !req.headers.authorization)
+      return new AppError('No authorization headers.', 401);
 
-  const currentUser = await User.findOne({
-    where: { userId: jwtResponse.sub },
+    const tokenBearer = req.headers.authorization.split(' ');
+    if (tokenBearer.length !== 2) return new AppError('Malformed token.', 401);
+
+    const token = tokenBearer[1];
+    const jwtResponse = jwt.verify(token, config.jwt.secret);
+
+    if (!permission) next(new AppError('Permission not provided.', 500));
+    if (!checkPermission(jwtResponse.role, permission, next))
+      next(new AppError('Permission denied', 401));
+
+    const currentUser = await User.findOne({
+      where: { userId: jwtResponse.sub },
+    });
+
+    if (!currentUser) {
+      return next(
+        new AppError(
+          'The user belonging to this token does no longer exist.',
+          401
+        )
+      );
+    }
+
+    if (currentUser.changedPasswordAfter(jwtResponse.iat)) {
+      return next(
+        new AppError(
+          'User recently changed password! Please log in again.',
+          401
+        )
+      );
+    }
+
+    req.user = currentUser.format();
+
+    logger.info('User Verified');
+    return next();
   });
-
-  if (!currentUser) {
-    return next(
-      new AppError(
-        'The user belonging to this token does no longer exist.',
-        401
-      )
-    );
-  }
-
-  if (currentUser.changedPasswordAfter(jwtResponse.iat)) {
-    return next(
-      new AppError('User recently changed password! Please log in again.', 401)
-    );
-  }
-
-  logger.info('User Verified');
-  return next();
-});
+};
 
 exports.forgotPassword = catchAsync(async (req, res, next) => {
   if (!req.body.email) {
@@ -288,3 +305,14 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
 
   createSendToken(updatedUser, 201, res);
 });
+
+function checkPermission(payloadRole, permission, next) {
+  if (!roles.includes(payloadRole))
+    next(new AppError('User not authorised to perform this action', 401));
+
+  const rolePermissions = permissions[payloadRole];
+  if (!rolePermissions.includes(permission))
+    next(new AppError('User not authorised to perform this action', 401));
+
+  return true;
+}

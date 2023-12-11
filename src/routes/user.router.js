@@ -18,37 +18,6 @@ router.get('/:userId', requireAuth, userController.getUser);
 router.delete('/:userId', requireAuth, userController.deleteUser);
 
 // =================================== PRODUCT ROUTES ===================================
-// create a new product
-router.post(
-  '/:userId/products/',
-  requireAuth,
-  userController.fetchUser('GET'),
-  productController.uploadProductImages,
-  productController.postCreateProduct
-);
-
-// get a product
-router.get(
-  '/:userId/products/:productId',
-  requireAuth,
-  productController.fetchProduct,
-  productController.getProduct
-);
-
-router.get(
-  '/:userId/products/',
-  requireAuth,
-  userController.fetchUser('GET'),
-  productController.getAllProducts
-);
-
-// delete a product
-router.delete(
-  '/:userId/products/:productId',
-  requireAuth,
-  productController.fetchProduct,
-  productController.deleteProduct
-);
 
 module.exports = router;
 
