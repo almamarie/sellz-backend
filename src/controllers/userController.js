@@ -134,20 +134,21 @@ exports.deleteUser = async (req, res) => {
   }
 };
 
-exports.fetchUser = (requestType) => {
-  return catchAsync(async (req, res, next) => {
-    let userId;
-    if (requestType === 'POST') userId = req.body.id || req.body.userId;
-    else if (requestType === 'GET') userId = req.params.id || req.params.userId;
+// exports.fetchUser = (requestType) => {
+//   return catchAsync(async (req, _, next) => {
+//     console.log('Here');
+//     let userId;
+//     if (requestType === 'POST') userId = req.user.userId;
+//     else if (requestType === 'GET') userId = req.params.userId;
 
-    // console.log('User Id: ', userId);
+//     console.log(`User: "${req.user.userId}"`);
+//     console.log('User id is true', !userId);
+//     if (!userId) return next(new AppError('User ID must be provided!', 400));
+//     const user = await User.findByPk(userId);
+//     if (!user) next(new AppError('User not found.', 404));
 
-    if (!userId) return next(new AppError('User ID must be provided!', 400));
-    const user = await User.findByPk(userId);
-    if (!user) next(new AppError('User not found.', 404));
+//     req.user = user;
 
-    req.user = user;
-
-    next();
-  });
-};
+//     next();
+//   });
+// };

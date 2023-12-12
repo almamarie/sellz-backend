@@ -1,20 +1,20 @@
+const Config = require('./config');
+const PaystackLib = require('paystack');
+
 class Paystack {
-  constructor() {}
+  constructor() {
+    const config = new Config();
+    this.paystack = new PaystackLib(config.payment.PAYMENT_SECRET_KEY);
+    this.payment_config = config.payment;
+  }
 
-  initiateTransaction(userData) {
-    const url = 'https://api.paystack.co/transaction/initialize';
-    const params = {
-      email: 'customer@email.com',
-      amount: '20000',
-    };
-
-    fetch(url, {
-      method: 'POST',
-      headers: {
-        Authorization: 'Bearer SECRET_KEY',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(params),
+  async initiateTransaction(userData) {
+    const response = await this.paystack.transaction.initialize({
+      ...userData,
     });
+
+    return response.data;
   }
 }
+
+module.exports = Paystack;

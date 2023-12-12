@@ -2,6 +2,7 @@ const crypto = require('crypto');
 const { STRING, DATE, DATEONLY, UUID, NOW } = require('sequelize');
 const sequelize = require('../databases/sequelize');
 const { generateId } = require('../utils/generateId');
+const { roles } = require('../utils/roles-permissions');
 const User = sequelize.define('user', {
   userId: {
     type: UUID,
@@ -39,6 +40,17 @@ const User = sequelize.define('user', {
       isIn: {
         args: [['M', 'F']],
         msg: 'Gender must be M or F',
+      },
+    },
+  },
+
+  role: {
+    type: STRING,
+    allowNull: false,
+    validate: {
+      isIn: {
+        args: [[...roles]],
+        msg: 'Invalid user type',
       },
     },
   },
@@ -99,6 +111,7 @@ User.prototype.format = function () {
     email: this.email,
     address: this.address,
     profilePicture: this.profilePicture,
+    role: this.role,
   };
 };
 
