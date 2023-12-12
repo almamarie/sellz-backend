@@ -11,6 +11,14 @@ router.post(
   productController.postCreateProduct
 );
 
+router.patch(
+  '/:productId',
+  requireAuth('patch:product'),
+  productController.fetchProduct,
+  productController.uploadProductImages,
+  productController.patchProduct
+);
+
 // get a product
 router.get(
   '/:productId',
@@ -20,12 +28,7 @@ router.get(
 );
 
 // get all products
-router.get(
-  '/',
-  requireAuth('get:products'),
-  // userController.fetchUser('GET'),
-  productController.getAllProducts
-);
+router.get('/', requireAuth('get:products'), productController.getAllProducts);
 
 // delete a product
 router.delete(

@@ -19,7 +19,7 @@ const permissions = {
     'delete:shipper',
 
     // admin
-    'post:admin-user',
+    'create:admin',
     'get:admin-user',
     'patch:admin-user',
     'delete:admin-user',
@@ -27,7 +27,7 @@ const permissions = {
 
   admin: [
     // user
-    'post:user',
+    'create:user',
     'get:user',
     'patch:user',
     'delete:user',
@@ -40,6 +40,7 @@ const permissions = {
     // product
     'post:product',
     'get:product',
+    'get:products',
     'patch:product',
     'delete:product',
 

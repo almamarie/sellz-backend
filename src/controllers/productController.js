@@ -5,6 +5,8 @@ const catchAsync = require('../utils/catchAsync');
 const multer = require('multer');
 const User = require('../models/user');
 const { deleteFiles } = require('../utils/deleteFile');
+const logger = require('../logs/logger');
+const { areObjectsEqual } = require('../utils/compare-objects');
 
 const cloudinary = new CustomCloudinary();
 
@@ -39,12 +41,13 @@ exports.uploadProductImages = upload.fields([
 
 exports.postCreateProduct = catchAsync(
   async (req, res, next) => {
-    console.log('creating a new product');
+    logger.info('creating a new product');
     const user = req.user;
     if (!user) throw next(AppError('User Id must be provided!', 400));
-    console.log('Files: ', req.files.otherPhotos);
+
     const coverPhotoPath = req.files.coverPhoto[0].path;
     const otherPhotoPaths = req.files.otherPhotos.map((photo) => photo.path);
+    console.log('User prototype: ', user.Prototype);
 
     const coverPhoto =
       'http://res.cloudinary.com/marieloumar/image/upload/v1699385089/sellz-profile-pictures/canflknvktctez3pceyo.jpg' ||
@@ -87,7 +90,6 @@ exports.getProduct = catchAsync(async (req, res, next) => {
 
   const product = req.product;
 
-  console.log('Product: ', product);
   res.status(200).json({
     status: 'success',
     data: {
@@ -100,12 +102,26 @@ exports.getAllProducts = catchAsync(async (req, res, next) => {
   const user = req.user;
 
   const products = await user.getProducts();
-  // console.log('Products: ', products);
 
   return res.status(201).send({
     success: true,
     results: products.length,
     data: { products: products.map((product) => product.format()) },
+  });
+});
+
+exports.patchProduct = catchAsync(async (req, res, next) => {
+  const product = req.product;
+
+  const newProduct = await product.update({ ...req.body });
+
+  const formatedData = newProduct.format();
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      data: { ...formatedData, quantityInStock: +formatedData.quantityInStock },
+    },
   });
 });
 
@@ -124,12 +140,7 @@ exports.deleteProduct = catchAsync(async (req, res, next) => {
 });
 
 exports.fetchProduct = catchAsync(async (req, res, next) => {
-  const userId = req.params.userId;
-  if (!userId) return next(new AppError('User ID must be provided!', 400));
-
-  const user = await User.findByPk(userId);
-  if (!user) next(new AppError('User not found.', 404));
-  req.user = user;
+  const user = req.user;
 
   const productId = req.params.productId;
   if (!productId)

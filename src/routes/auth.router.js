@@ -3,11 +3,25 @@ const authController = require('../controllers/authController');
 const router = express.Router();
 
 router.post('/signin', authController.signIn);
+
 router.post(
-  '/:role/signup',
-  // authController.attachUserType('SuperAdmin'),
+  '/user/signup',
+  authController.requireAuth(['create:user']),
   authController.uploadPhoto,
-  authController.signup
+  authController.signup('user')
+);
+
+router.post(
+  '/admin/signup',
+  authController.requireAuth(['create:admin']),
+  authController.uploadPhoto,
+  authController.signup('admin')
+);
+
+router.post(
+  '/superadmin/signup',
+  authController.uploadPhoto,
+  authController.signup('superadmin')
 );
 
 router.post('/forgotPassword', authController.forgotPassword);

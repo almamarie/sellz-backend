@@ -106,104 +106,58 @@ exports.signIn = catchAsync(async (req, res, next) => {
   createSendToken(user, 201, res);
 });
 
-exports.signup = catchAsync(
-  async (req, res, next) => {
-    const { role } = req.params;
-    logger.info(`Creating a new ${role} user...`);
+exports.signup = function (userRole) {
+  return catchAsync(
+    async (req, res, next) => {
+      // const { role } = req.params;
+      logger.info(`Creating a new ${userRole} user...`);
 
-    if (!roles.includes(role)) {
-      console.log('role');
-      next(new AppError('Invalid user type.', 400));
+      // if (!roles.includes(role)) {
+      //   console.log('role');
+      //   next(new AppError('Invalid user type.', 400));
+      // }
+
+      if (!req.file) next(new AppError('Profile picture not found.', 400));
+
+      const profilePicturePath = req.file.path;
+
+      const identicalUser = await User.findAll({
+        where: { email: req.body.email },
+      });
+
+      if (identicalUser.length > 1) throw new Error('User may already exists');
+
+      if (req.body.password.length < 8)
+        throw new Error('provided password is not strong');
+
+      const passwordHash = await generateHashPassword(req.body.password);
+
+      const profilePicture =
+        'http://res.cloudinary.com/marieloumar/image/upload/v1699230037/sellz-profile-pictures/hbmzdskycn6d48rbfnpr.jpg' ||
+        (await cloudinary.uploadSingleImage(profilePicturePath));
+      const newUser = await User.create({
+        ...req.body,
+        role: userRole,
+        passwordHash,
+        profilePicture,
+      });
+
+      deleteFile(profilePicturePath);
+
+      createSendToken(newUser, 201, res);
+    },
+    (req, res) => {
+      const profilePicture = req.file.path;
+      deleteFile(profilePicture);
     }
-
-    if (!req.file) next(new AppError('Profile picture not found.', 400));
-
-    const profilePicturePath = req.file.path;
-
-    const identicalUser = await User.findAll({
-      where: { email: req.body.email },
-    });
-
-    if (identicalUser.length > 1) throw new Error('User may already exists');
-
-    if (req.body.password.length < 8)
-      throw new Error('provided password is not strong');
-
-    const passwordHash = await generateHashPassword(req.body.password);
-
-    const profilePicture =
-      'http://res.cloudinary.com/marieloumar/image/upload/v1699230037/sellz-profile-pictures/hbmzdskycn6d48rbfnpr.jpg' ||
-      (await cloudinary.uploadSingleImage(profilePicturePath));
-    const newUser = await User.create({
-      ...req.body,
-      role,
-      passwordHash,
-      profilePicture,
-    });
-
-    deleteFile(profilePicturePath);
-
-    createSendToken(newUser, 201, res);
-  },
-  (req, res) => {
-    const profilePicture = req.file.path;
-    deleteFile(profilePicture);
-  }
-);
+  );
+};
 
 generateHashPassword = async (password) => {
   const saltRounds = 10;
   const salt = await bcrypt.genSalt(saltRounds);
   const hash = await bcrypt.hash(password, salt);
   return hash;
-};
-
-exports.requireAuth = (permission) => {
-  return catchAsync(async (req, res, next) => {
-    logger.info('Require auth called');
-
-    console.log('Permission: ', permission);
-
-    if (!req.headers || !req.headers.authorization)
-      return new AppError('No authorization headers.', 401);
-
-    const tokenBearer = req.headers.authorization.split(' ');
-    if (tokenBearer.length !== 2) return new AppError('Malformed token.', 401);
-
-    const token = tokenBearer[1];
-    const jwtResponse = jwt.verify(token, config.jwt.secret);
-
-    if (!permission) next(new AppError('Permission not provided.', 500));
-    if (!checkPermission(jwtResponse.role, permission, next))
-      next(new AppError('Permission denied', 401));
-
-    const currentUser = await User.findOne({
-      where: { userId: jwtResponse.sub },
-    });
-
-    if (!currentUser) {
-      return next(
-        new AppError(
-          'The user belonging to this token does no longer exist.',
-          401
-        )
-      );
-    }
-
-    if (currentUser.changedPasswordAfter(jwtResponse.iat)) {
-      return next(
-        new AppError(
-          'User recently changed password! Please log in again.',
-          401
-        )
-      );
-    }
-
-    req.user = currentUser.format();
-
-    logger.info('User Verified');
-    return next();
-  });
 };
 
 exports.forgotPassword = catchAsync(async (req, res, next) => {
@@ -306,13 +260,66 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
   createSendToken(updatedUser, 201, res);
 });
 
+exports.requireAuth = (permission = []) => {
+  return catchAsync(async (req, res, next) => {
+    logger.info('Require auth called');
+
+    console.log('Permission: ', permission);
+
+    if (!req.headers || !req.headers.authorization)
+      return next(new AppError('No authorization headers.', 401));
+
+    console.log('here');
+    const tokenBearer = req.headers.authorization.split(' ');
+    if (tokenBearer.length !== 2) return new AppError('Malformed token.', 401);
+
+    const token = tokenBearer[1];
+    const jwtResponse = jwt.verify(token, config.jwt.secret);
+
+    checkPermission(jwtResponse.role, permission, next);
+
+    const currentUser = await User.findOne({
+      where: { userId: jwtResponse.sub },
+    });
+
+    if (!currentUser) {
+      return next(
+        new AppError(
+          'The user belonging to this token does no longer exist.',
+          401
+        )
+      );
+    }
+
+    if (currentUser.changedPasswordAfter(jwtResponse.iat)) {
+      return next(
+        new AppError(
+          'User recently changed password! Please log in again.',
+          401
+        )
+      );
+    }
+
+    req.user = currentUser;
+
+    logger.info('User Verified');
+    return next();
+  });
+};
+
 function checkPermission(payloadRole, permission, next) {
-  if (!roles.includes(payloadRole))
-    next(new AppError('User not authorised to perform this action', 401));
+  if (typeof permission === 'string') {
+    permission = [permission];
+  }
+
+  if (!permission || permission.length < 1)
+    next(new AppError('Permission not provided.', 500));
 
   const rolePermissions = permissions[payloadRole];
-  if (!rolePermissions.includes(permission))
-    next(new AppError('User not authorised to perform this action', 401));
-
-  return true;
+  console.log('here');
+  for (let i = 0; i < permission.length; i++) {
+    console.log(`Role does not include: `);
+    if (!rolePermissions.includes(permission[i]))
+      next(new AppError('User not authorised to perform this action', 401));
+  }
 }

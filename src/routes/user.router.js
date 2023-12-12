@@ -1,6 +1,5 @@
 const express = require('express');
 const userController = require('../controllers/userController');
-const productController = require('../controllers/productController');
 const paymentController = require('../controllers/paymentsController');
 const { requireAuth } = require('../controllers/authController');
 const router = express.Router();
@@ -8,6 +7,7 @@ const router = express.Router();
 // =================================== USER ROUTES ===================================
 router.post('/', userController.postCreateUser);
 router.patch('/:userId/', requireAuth, userController.patchUpdateUser);
+
 router.patch(
   '/:userId/profile-picture/',
   requireAuth,
