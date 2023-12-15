@@ -22,13 +22,13 @@ router.patch(
 // get a product
 router.get(
   '/:productId',
-  requireAuth('get:product'),
+
   productController.fetchProduct,
   productController.getProduct
 );
 
 // get all products
-router.get('/', requireAuth('get:products'), productController.getAllProducts);
+router.get('/', productController.getAllProducts);
 
 // delete a product
 router.delete(

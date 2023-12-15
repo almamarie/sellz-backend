@@ -13,9 +13,39 @@ exports.getOne = (Model) =>
     });
   });
 
-exports.postUpdate = (Model) =>
+exports.postCreate = (Model) => {
+  return catchAsync(async (req, res, _) => {
+    await Model.create({ ...req.body });
+
+    const models = await Model.findAll();
+    if (!models) {
+      return res.status(201).send({
+        success: true,
+        results: 0,
+        data: { data: [] },
+      });
+    }
+    console.log(models);
+
+    return res.status(201).send({
+      success: true,
+      results: models.length,
+      data: { data: models.map((model) => model.format()) },
+    });
+  });
+};
+
+exports.patchUpdate = (Model) =>
   catchAsync(async (req, res, next) => {
-    const obj = findModel(req.params.id, next);
+    const obj = await findModel(req.params.id, next);
+
+    const updated = await obj.update({ ...req.body });
+    res.status(200).json({
+      status: 'success',
+      data: {
+        data: { ...updated.format() },
+      },
+    });
   });
 
 exports.getAll = (Model) =>
@@ -28,7 +58,7 @@ exports.getAll = (Model) =>
         data: { data: [] },
       });
     }
-    console.log('Models: ', models);
+    // console.log('Models: ', models);
     return res.status(201).send({
       success: true,
       results: models.length,

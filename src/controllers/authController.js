@@ -300,6 +300,8 @@ exports.requireAuth = (permission = []) => {
 };
 
 function checkPermission(payloadRole, permission, next) {
+  if (permission === '*') return;
+
   if (typeof permission === 'string') {
     permission = [permission];
   }

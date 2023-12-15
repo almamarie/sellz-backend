@@ -19,7 +19,7 @@ User.hasMany(Product, { foreignKey: 'userId' });
 Product.hasOne(User);
 
 Product.hasMany(ProductReview);
-Product.hasOne(ProductCategory);
+// Product.hasOne(ProductCategory);
 Product.hasOne(ProductCondition);
 
 User.hasOne(Cart);

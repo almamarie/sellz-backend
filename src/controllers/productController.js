@@ -59,10 +59,16 @@ exports.postCreateProduct = catchAsync(
         'http://res.cloudinary.com/marieloumar/image/upload/v1699385155/sellz-profile-pictures/vm45ftkxaapypcdahggg.jpg',
       ] || (await cloudinary.uploadImages(otherPhotoPaths));
 
+    // check for product categories
+
+    if (!req.body.product) {
+      next(new AppError('Product categories not provided', 404));
+    }
     await user.createProduct({
       ...req.body,
       coverPhoto,
       otherPhotos: JSON.stringify(otherPhotos.join('[]')),
+      productCategories: JSON.stringify(req.body.productCategories.join('[]')),
     });
 
     const products = await user.getProducts();
@@ -72,7 +78,7 @@ exports.postCreateProduct = catchAsync(
     return res.status(201).send({
       success: true,
       results: products.length,
-      data: { products: products.map((product) => product.format()) },
+      data: { data: products.map((product) => product.format()) },
     });
   },
   (req, res) => {
@@ -147,8 +153,8 @@ exports.fetchProduct = catchAsync(async (req, res, next) => {
     return next(new AppError('Product ID must be provided!', 400));
 
   const product = await Product.findByPk(productId);
-  if (!product || !user.hasProduct(product))
-    return next(new AppError('Product not found!', 404));
+  // if (!product || !user.hasProduct(product))
+  if (!product) return next(new AppError('Product not found!', 404));
 
   req.product = product;
   next();

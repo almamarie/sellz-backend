@@ -3,6 +3,7 @@ const UserRouter = require('./user.router');
 const AuthRouter = require('./auth.router');
 const ProductRouter = require('./product.router');
 const PaymentRouter = require('./payment.router');
+const ProductCategoryRouter = require('./product-category.router');
 const logger = require('../logs/logger');
 const router = express.Router();
 
@@ -15,5 +16,6 @@ router.use('/users', UserRouter);
 router.use('/auth', AuthRouter);
 router.use('/products', ProductRouter);
 router.use('/payments', PaymentRouter);
+router.use('/product-categories', ProductCategoryRouter);
 
 exports.IndexRouter = router;

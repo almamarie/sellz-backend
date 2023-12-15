@@ -34,6 +34,9 @@ const permissions = {
 
     // user order
     'cancel:order',
+
+    // product category
+    'post:product-category',
   ],
 
   user: [

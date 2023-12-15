@@ -62,6 +62,20 @@ const Product = sequelize.define(
         min: 0,
       },
     },
+
+    totalReviews: {
+      type: INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+      validator: {
+        min: 0,
+      },
+    },
+
+    productCategories: {
+      type: STRING,
+      allowNull: false,
+    },
   },
 
   {
@@ -85,6 +99,8 @@ Product.prototype.format = function () {
     unitPrice: this.unitPrice,
     quantityInStock: this.quantityInStock,
     rating: this.rating,
+    totalReviews: this.totalReviews,
+    // productCategories: JSON.parse(this.productCategories).split('[]'),
   };
 };
 

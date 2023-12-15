@@ -1,7 +1,7 @@
-const { STRING, INTEGER } = require("sequelize");
-const sequelize = require("../databases/sequelize");
+const { STRING, INTEGER } = require('sequelize');
+const sequelize = require('../databases/sequelize');
 
-const ProductCategory = sequelize.define("product_category", {
+const ProductCategory = sequelize.define('product_category', {
   productCategoryId: {
     type: INTEGER,
     autoIncrement: true,
@@ -12,8 +12,14 @@ const ProductCategory = sequelize.define("product_category", {
 
   name: {
     type: STRING,
+    unique: true,
     allowNull: false,
   },
 });
+
+ProductCategory.prototype.format = function () {
+  console.log('\n\n\nHere\n\n\n');
+  return { productCategoryId: this.productCategoryId, name: this.name };
+};
 
 module.exports = ProductCategory;
