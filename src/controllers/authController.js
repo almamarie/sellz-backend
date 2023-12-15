@@ -109,13 +109,7 @@ exports.signIn = catchAsync(async (req, res, next) => {
 exports.signup = function (userRole) {
   return catchAsync(
     async (req, res, next) => {
-      // const { role } = req.params;
       logger.info(`Creating a new ${userRole} user...`);
-
-      // if (!roles.includes(role)) {
-      //   console.log('role');
-      //   next(new AppError('Invalid user type.', 400));
-      // }
 
       if (!req.file) next(new AppError('Profile picture not found.', 400));
 
@@ -214,8 +208,6 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
     .createHash('sha256')
     .update(req.params.token)
     .digest('hex');
-
-  // console.log('Hashed Token: ', hashedToken);
 
   const user = await User.findOne({
     where: {

@@ -16,7 +16,8 @@ const handleJWTExpiredError = () =>
 const handleMulterError = () => new AppError('Invalid file', 400);
 
 const sendErrorDev = (err, res) => {
-  res.status(err.statusCode).json({
+  console.log('\n\nHere\n\n');
+  return res.status(err.statusCode).json({
     status: err.status,
     error: err,
     message: err.message,
